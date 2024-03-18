@@ -1,6 +1,7 @@
 import React from 'react'
-import Logo from "../Assets/logo1.png"
 import Logo2 from "../Assets/logo2..png"
+import { FaSearch } from "react-icons/fa";
+
 
 function Header() {
   return (
@@ -16,7 +17,8 @@ function Header() {
                     All Categories    
                 </div>
                 <div className="search">
-                    <input type="text" placeholder='Search here' />
+                    <input type="text" placeholder='Search here'  /> 
+                    <FaSearch className='icon cursor' size={20} />
                 </div>
 
 
