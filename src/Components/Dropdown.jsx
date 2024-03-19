@@ -9,6 +9,8 @@ import { FaDog } from "react-icons/fa";
 import { MdOutlineGirl } from "react-icons/md";
 import { GiDiamondRing } from "react-icons/gi";
 import { GiNinjaMask } from "react-icons/gi";
+import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+
 
 
 
@@ -25,6 +27,7 @@ function Dropdown() {
         setselecteditem(name)
     }
     return (
+        <ClickAwayListener onClickAway={() => setisopenselect(false)}>
         <div className="selectDropdown cursor position-relative">
             <span className='openSelect' onClick={openSelect}>{selecteditem}<IoIosArrowDown className='arrow'/></span>
             {
@@ -52,6 +55,7 @@ function Dropdown() {
             }
             
         </div>
+        </ClickAwayListener>
   
      
 

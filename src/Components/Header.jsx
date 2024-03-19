@@ -3,15 +3,17 @@ import Logo2 from "../Assets/logo2..png"
 import { FaSearch } from "react-icons/fa";
 import Dropdown from './Dropdown';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+import NavbarDarkExample from './location';
+import Location from './location';
+import { FaCodeCompare } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
+import { BsCart3 } from "react-icons/bs";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 
 
 function Header() {
-    // const [Categories, setcategories] = useState(
-    //     'All Categories','Clothing','Beauty','Foot Wear','Baking Items','Bags','Pets',"Abaya's", 'Jwellery','Hijabs'
-    // )
     return (
-        
         <div className="header">
             <div className='container-fluid'>
                 <div className="row">
@@ -29,15 +31,27 @@ function Header() {
 
                         </div>
                     </div>
-                    <div 
-                    className="col-sm-5 country">
-                        <Dropdown/>
+                    <div className="col-sm-5 d-flex align-items-center country">
+                        <div className="ml-auto d-flex align-items-center  rightside">
+                            <div className="countrywrapper">
+                                <Location />
+                            </div>
+                            <ul className='list list-inline mb-0 headerTabs'>
+                                <li className='list-inline-item'><span className='spn'><FaCodeCompare size={20} /><span className=' badge bg-success rounded-circle'>3</span>Compare</span></li>
+                                <li className='list-inline-item'><span className='spn'><FaRegHeart size={20}/>Wishlist</span></li>
+                                <li className='list-inline-item'><span className='spn'><BsCart3 size={20}/>Cart</span></li>
+                                <li className='list-inline-item'><span className='spn'><FaRegCircleUser size={20}/>Account</span></li>
+                            </ul>
+
+                        </div>
                     </div>
+
+
                 </div>
 
 
             </div>
-        </div>
+        </div >
     )
 }
 
