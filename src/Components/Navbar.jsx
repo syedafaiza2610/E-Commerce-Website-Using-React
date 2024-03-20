@@ -50,7 +50,7 @@ function Navbar() {
                         <div className="phone  d-flex align-items-center">
                             <span><MdOutlineHeadphones size={30}/></span>
                             <div className="info ml-3">
-                                <h4 className='mb-0'>021-1234567</h4>
+                                <h5 className='mb-0'>021-1234567</h5>
                                 <p className='mb-0'>24/7 Support Center</p>
 
                             </div>

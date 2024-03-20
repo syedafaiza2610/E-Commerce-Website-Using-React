@@ -10,6 +10,7 @@ import Login from './Pages/Login';
 import Product from './Pages/Products';
 import Contact from './Pages/Contact';
 import ErrorPage from './Pages/Error';
+import Footer from './Components/Footer';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         
       </Routes>
       </BrowserRouter>
+      <Footer/>
 
     
     </div>
