@@ -22,7 +22,7 @@ function HomeSlider() {
   };
   return (
     <>
-    <Header/>
+   <Header/>
     <section className='home-slider'>
       <div className="container-fluid">
       <Slider {...settings} className='home-slider-main'>

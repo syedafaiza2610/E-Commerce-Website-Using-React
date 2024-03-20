@@ -8,9 +8,12 @@ function Login() {
   return (
     <>
       <Header/>
-    <Form className='log container '>
-      <h2>Log In</h2>
+      <div className='containerdiv1'>
+    <Form className='registration-form'>
+      <h2>Login</h2>
       <br></br>
+     
+      
       <Row className='mb-3'>
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
@@ -22,8 +25,8 @@ function Login() {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
+        </Row>
        
-       </Row>
 
       <br></br>
 
@@ -31,6 +34,7 @@ function Login() {
         Login
       </Button>
     </Form>
+    </div>
     </>
   );
 }

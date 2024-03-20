@@ -22,21 +22,21 @@ function Navbar() {
                                     <Button><Link  to="/home">Home</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="about">About</Link></Button>
+                                    <Button><Link  to="/about">About</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="shop">Shop</Link></Button>
+                                    <Button><Link  to="/shop">Shop</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
                                     <Button><Link  to="pages">Pages  <IoIosArrowDown /></Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="contact">Contact</Link></Button>
+                                    <Button><Link  to="/contact">Contact</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link to="register">Register</Link></Button>
+                                    <Button><Link to="/register">Register</Link></Button>
                                     <li className='list-inline-item'>
-                                    <Button><Link to="login">Login</Link></Button>
+                                    <Button><Link to="/login">Login</Link></Button>
                                 </li>
                                 </li>
                             </ul>

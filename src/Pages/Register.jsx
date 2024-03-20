@@ -8,7 +8,8 @@ function Register() {
   return (
     <>
       <Header/>
-    <Form className='container w-50'>
+      <div className='containerdiv'>
+    <Form className='registration-form'>
       <h2>Registration</h2>
       <br></br>
       <Row className="mb-3">
@@ -62,6 +63,7 @@ function Register() {
         Register
       </Button>
     </Form>
+    </div>
     </>
   );
 }

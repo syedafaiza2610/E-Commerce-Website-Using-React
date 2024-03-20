@@ -156,7 +156,7 @@ color: rgb(0, 0,0,0.7);
   font-size: 16px;
 }
 .icn{
-  color:#9365c9;
+  color:#362b2b;
   font-size: 15px;
 }
 .icn:hover{
@@ -307,4 +307,29 @@ h2{
   color: #EC7676!important;
   font-weight: 400;
   
+}
+.containerdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.containerdiv1 {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 60%;
+  margin: 50px;
+  margin-left: 35%;
+
+}
+
+.registration-form {
+  width: 50%;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px #9365c9; /* Box shadow */
+}
+.registration-form input:focus {
+  box-shadow: 0 0 5px #EC7676!important;
 }
