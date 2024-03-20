@@ -313,13 +313,14 @@ h2{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-top: 20px;
 }
 .containerdiv1 {
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 60%;
-  margin: 50px;
+  margin: 40px;
   margin-left: 35%;
 
 }
@@ -332,4 +333,13 @@ h2{
 }
 .registration-form input:focus {
   box-shadow: 0 0 5px #EC7676!important;
+}
+
+.para{
+  text-align: center;
+  font-size: 18px;
+}
+.para a{
+  color:#EC7676;
+  margin-left: 6px;
 }

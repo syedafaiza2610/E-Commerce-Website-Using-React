@@ -7,6 +7,9 @@ import HomeSlider from './Pages/Home';
 import About from './Pages/About';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import Product from './Pages/Products';
+import Contact from './Pages/Contact';
+import ErrorPage from './Pages/Error';
 
 
 
@@ -20,6 +23,9 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/products' element={<Product/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='*' element={<ErrorPage/>}/>
         
       </Routes>
       </BrowserRouter>

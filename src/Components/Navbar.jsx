@@ -28,7 +28,7 @@ function Navbar() {
                                     <Button><Link  to="/shop">Shop</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="pages">Pages  <IoIosArrowDown /></Link></Button>
+                                    <Button><Link  to="/products">Products <IoIosArrowDown /></Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
                                     <Button><Link  to="/contact">Contact</Link></Button>

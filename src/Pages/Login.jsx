@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Header from "../Components/Header"
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -11,7 +12,6 @@ function Login() {
       <div className='containerdiv1'>
     <Form className='registration-form'>
       <h2>Login</h2>
-      <br></br>
      
       
       <Row className='mb-3'>
@@ -33,6 +33,10 @@ function Login() {
       <Button className='submitbtn' type="submit">
         Login
       </Button>
+      <br></br>
+          <br></br>
+
+          <p className='para'>Don't have an account?<span><Link to='/register'>Register now</Link></span></p>
     </Form>
     </div>
     </>
