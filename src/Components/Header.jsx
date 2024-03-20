@@ -9,11 +9,13 @@ import { FaCodeCompare } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegCircleUser } from "react-icons/fa6";
+import Navbar from './Navbar';
 
 
 
 function Header() {
     return (
+        <>
         <div className="header">
             <div className='container-fluid'>
                 <div className="row">
@@ -37,10 +39,21 @@ function Header() {
                                 <Location />
                             </div>
                             <ul className='list list-inline mb-0 headerTabs'>
-                                <li className='list-inline-item'><span className='spn'><FaCodeCompare size={20} /><span className=' badge bg-success rounded-circle'>3</span>Compare</span></li>
-                                <li className='list-inline-item'><span className='spn'><FaRegHeart size={20}/>Wishlist</span></li>
-                                <li className='list-inline-item'><span className='spn'><BsCart3 size={20}/>Cart</span></li>
-                                <li className='list-inline-item'><span className='spn'><FaRegCircleUser size={20}/>Account</span></li>
+                                <li className='list-inline-item'>
+                                    <span className='spn'><FaCodeCompare size={20}/>  Compare
+                                    </span>
+                                
+                                    </li>
+                                    <li className='list-inline-item'>
+                                    <span className='spn'><BsCart3 size={20}/> Cart
+                                    <span className='badge rounded-circle'>6</span>
+                                    </span>
+                                    </li>
+                                    <li className='list-inline-item'>
+                                    <span className='spn'><FaRegCircleUser size={20}/>  Account
+                                    </span>
+                                    
+                                    </li>
                             </ul>
 
                         </div>
@@ -51,7 +64,10 @@ function Header() {
 
 
             </div>
+           
         </div >
+         <Navbar/>
+         </>
     )
 }
 
