@@ -38,9 +38,10 @@ function Header() {
                             <div className="countrywrapper">
                                 <Location />
                             </div>
+                            <div className='listing'>
                             <ul className='list list-inline mb-0 headerTabs'>
                                 <li className='list-inline-item'>
-                                    <span className='spn'><FaCodeCompare size={20}/>  Compare
+                                    <span className='spn'><FaCodeCompare size={20}/> Compare
                                     </span>
                                 
                                     </li>
@@ -50,11 +51,12 @@ function Header() {
                                     </span>
                                     </li>
                                     <li className='list-inline-item'>
-                                    <span className='spn'><FaRegCircleUser size={20}/>  Account
+                                    <span className='spn'><FaRegCircleUser size={20}/> Account
                                     </span>
                                     
                                     </li>
                             </ul>
+                            </div>
 
                         </div>
                     </div>

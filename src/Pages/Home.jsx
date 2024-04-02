@@ -8,11 +8,13 @@ import Slider4 from "../Assets/slider4.jpeg"
 import Slider5 from "../Assets/slider5.jpg"
 import Slider6 from "../Assets/slider6.jpeg"
 import Header from '../Components/Header';
+import Category from '../Components/Category';
+import Banner from '../Components/Banner';
 
 
 function HomeSlider() {
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -49,6 +51,12 @@ function HomeSlider() {
       </div>
       
     </section>
+
+    <Category/>
+     <Banner/>
+
+     
+
     </>
   )
 }
