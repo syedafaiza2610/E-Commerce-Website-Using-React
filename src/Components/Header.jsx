@@ -10,6 +10,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Navbar from './Navbar';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 
 
@@ -41,7 +42,7 @@ function Header() {
                             <div className='listing'>
                             <ul className='list list-inline mb-0 headerTabs'>
                                 <li className='list-inline-item'>
-                                    <span className='spn'><FaCodeCompare size={20}/> Compare
+                                    <span className='spn'><FavoriteBorderOutlinedIcon size={20}/> Wishlist
                                     </span>
                                 
                                     </li>

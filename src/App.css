@@ -359,6 +359,7 @@ h2{
   font-weight: 600!important;
   margin-bottom: 25px!important;
   text-align: left;
+  color:#41003A!important;
 }
 .cat-slider-main .slick-slide {
  padding-right: 20px!important;
@@ -366,7 +367,7 @@ h2{
 }
 .cat-slider-main .item{
   height:auto;
-  background-color:#FFDFD2;
+  background-color:#e8dff3;
   border-radius: 10px;
   display: flex;
   cursor: pointer;
@@ -436,3 +437,110 @@ h2{
  transform: scale(1.1);
  rotate: (1deg);
 }
+
+.homeProducts{
+margin-bottom: 200px;
+padding: 25px 0px;
+}
+.popular{
+  margin-left: auto;
+}
+.popular li{
+  margin-left: 20px;
+}
+.popular li a{
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  position: relative;
+}
+.popular li a:hover{
+  color: #EC7676;
+  transform: translateY(-10px);
+}
+
+.homeProducts .productRow{
+  display: flex;
+  padding: 30px 0px;
+  margin: 0px -15px;
+  flex-wrap: wrap;
+}
+.homeProducts .productRow .item{
+  width: 20%;
+  padding: 15px 15px;
+
+}
+.productThumb{
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.productThumb:hover{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16) , 0 3px 6px rgba(0,0,0,0.23);
+}
+.productThumb .catName{
+  color:#EC7676;
+  opacity: 0.9;
+  font-size: 14px;
+}
+.productThumb .title a{
+  color: #000!important;
+}
+.productThumb .imgWrapper{
+  width: 100%;
+  overflow: hidden;
+}
+.productThumb .imgWrapper img{
+  transition: all 0.3s ease-in-out;
+}
+.productThumb:hover .imgWrapper img{
+  transform: scale(1.1);
+}
+
+.clr{
+  color:#EC7676;
+}
+
+
+.productThumb .title{
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0px;
+  line-height: 25px;
+
+}
+.productThumb .price{
+  color: #EC7676;
+  font-weight: bold;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.productThumb .oldprice{
+  color: #000;
+  font-weight: bold;
+  opacity: 0.6;
+  font-size: 17px;
+  text-decoration: line-through;
+}
+.addbtn{
+  margin-left: 6px!important;
+  background-color: #f0d6d6!important;
+  font-size: 18px!important;
+  padding: 5px 5px!important;
+  text-transform: capitalize!important;
+  color:#EC7676!important;
+}
+.addbtn:hover{
+  background-color: #EC7676!important;
+  color: #fff!important;
+}
+
+
