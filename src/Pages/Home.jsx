@@ -60,7 +60,7 @@ function HomeSlider() {
         <div className="container-fluid">
           <div className="d-flex align-items-center">
             <h2 className='hd mb-0 mt-0'>Popular Products</h2>
-            <ul className=' popular list list-inline ml-auto'> 
+            <ul className=' popular list list-inline ml-auto mb-0'> 
             <li className='list-inline-item'>
               <a className='cursor'>All</a>
             </li>
@@ -84,7 +84,22 @@ function HomeSlider() {
 
         <div className="productRow">
           <div className="item">
+            <Products tag="beauty"/>
+          </div>
+          <div className="item">
+            <Products tag ="sale"/>
+          </div>
+          <div className="item">
+            <Products tag="new"/>
+          </div>
+          <div className="item">
+            <Products tag="best"/>
+          </div>
+          <div className="item">
             <Products/>
+          </div>
+          <div className="item">
+            <Products  tag="sale"/>
           </div>
           <div className="item">
             <Products/>
@@ -93,22 +108,7 @@ function HomeSlider() {
             <Products/>
           </div>
           <div className="item">
-            <Products/>
-          </div>
-          <div className="item">
-            <Products/>
-          </div>
-          <div className="item">
-            <Products/>
-          </div>
-          <div className="item">
-            <Products/>
-          </div>
-          <div className="item">
-            <Products/>
-          </div>
-          <div className="item">
-            <Products/>
+            <Products  tag="new"/>
           </div>
           <div className="item">
             <Products/>

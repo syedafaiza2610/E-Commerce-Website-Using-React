@@ -4,19 +4,49 @@ import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import Tooltip from '@mui/material/Tooltip';
 
-function Products() {
+function Products(props) {
   return (
     <div className='productThumb'>
+      {
+        props.tag!==null && props.tag!==undefined &&
+        <span className={`badge1 ${props.tag}`}>{props.tag}</span>
+      }
+     
       <Link>
         <div className="imgWrapper">
           <img className='w-100' src={Lipstick} alt="" />
-          <div className="overlay">
+          <div className="overlay1 transition">
             <ul className='list list-inline mb-0'>
-                hgjhuj
+              <li className='list-inline-item'>
+              <Tooltip title="Add to Wishlist">
+                <a className='cursor'>
+                  <FavoriteBorderIcon />
+                </a>
+                </Tooltip>
+
+              </li>
+              <li className='list-inline-item'>
+              <Tooltip title="Compare">
+                <a className='cursor'>
+                  <CompareArrowsIcon />
+                </a>
+                </Tooltip>
+
+              </li>
+              <li className='list-inline-item'>
+              <Tooltip title="Quick View">
+                <a className='cursor'>
+                  <RemoveRedEyeOutlinedIcon />
+                </a>
+                </Tooltip>
+              </li>
             </ul>
           </div>
-
         </div>
       </Link>
 

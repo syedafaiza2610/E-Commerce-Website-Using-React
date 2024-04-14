@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Logo2 from "../Assets/logo2..png"
 import { FaSearch } from "react-icons/fa";
 import Dropdown from './Dropdown';
@@ -15,8 +15,11 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 
 
 function Header() {
+  
+  
     return (
         <>
+        <div className="headerWrapper">
         <div className="header">
             <div className='container-fluid'>
                 <div className="row">
@@ -70,6 +73,7 @@ function Header() {
            
         </div >
          <Navbar/>
+         </div>
          </>
     )
 }
