@@ -17,10 +17,12 @@ function Category() {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 10,
+        slidesToShow: 8,
         slidesToScroll: 1,
         fade: false,
-        arrows: true
+        arrows: true,
+        centerMode:true,
+        autoplay:2000
     };
     return (
         <>

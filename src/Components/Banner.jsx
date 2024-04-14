@@ -1,7 +1,8 @@
 import React from 'react'
 import Banner1 from "../Assets/banner1.avif"
-import Banner2 from "../Assets/ban.webp"
+import Banner2 from "../Assets/beautyslider.jpg"
 import Banner3 from "../Assets/banner 3.avif"
+
 
 function Banner() {
   return (

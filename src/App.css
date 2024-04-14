@@ -383,8 +383,9 @@ h2{
   padding: 15px 0px;
 
 }
+
 .info .cat1{
-  height: 130px;
+  height: 100px;
   width: 100px;
   padding-left: 0px;
 }
@@ -431,7 +432,7 @@ h2{
   transition: all 0.3s ease-in-out!important;
 }
 .imgbanner{
-  height: 245px!important;
+  height: 240px!important;
 }
 .bannerSection{
   padding: 25px 0px;
@@ -448,7 +449,6 @@ h2{
 }
 
 .homeProducts{
-margin-bottom: 200px;
 padding: 25px 0px;
 }
 .popular{
@@ -573,7 +573,7 @@ padding: 25px 0px;
 }
 .overlay1 ul{
   background:#fff!important;
-  width: 125px;
+  width: 140px;
   height: auto;
   border-radius: 7px;
   border: 1px solid #EC7676;
@@ -620,4 +620,11 @@ padding: 25px 0px;
 .badge1.best{
   background: #d87b3d!important;
 }
+.homeProductsRow2 .prodSlider .item{
+  padding-right:20px!important;
+  padding: 10px 5px!important;
 
+}
+.homeProducts .shamp img{
+  height: 450px!important;
+}
