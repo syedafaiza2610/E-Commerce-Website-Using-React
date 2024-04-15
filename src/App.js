@@ -11,16 +11,20 @@ import Product from './Pages/Products';
 import Contact from './Pages/Contact';
 import ErrorPage from './Pages/Error';
 import Footer from './Components/Footer';
+import Listing from './Pages/Listing';
+
 
 
 
 function App() {
   return (
+    <>
     <div>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomeSlider/>}/>
         <Route path='/home' element={<HomeSlider/>}/>
+        <Route path='/listing' element={<Listing/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -34,6 +38,7 @@ function App() {
 
     
     </div>
+    </>
   );
 }
 
