@@ -12,6 +12,7 @@ import Contact from './Pages/Contact';
 import ErrorPage from './Pages/Error';
 import Footer from './Components/Footer';
 import Listing from './Pages/Listing';
+import DetailsPage from './Pages/Details';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<HomeSlider/>}/>
         <Route path='/home' element={<HomeSlider/>}/>
         <Route path='/listing' element={<Listing/>}/>
+        <Route path='/product/details' element={<DetailsPage/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>

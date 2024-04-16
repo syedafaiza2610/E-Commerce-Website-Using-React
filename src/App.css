@@ -783,6 +783,30 @@ margin-top: 40px;
 .topStrip{
  padding: 0px 25px!important;
 }
-.right-content .topStrip p{
-  font-size: 60px!important;
+.topStrip p{
+  font-size: 20px!important;
+}
+.btns{
+  margin-left: auto!important;
+}
+.btnback{
+  background: #EC7676!important;
+  color: #fff!important;
+  padding: 10px!important;
+  height: 40px!important;
+  text-align: center!important;
+
+}
+.btnback:hover{
+  outline: none!important;
+}
+.tab .bttn{
+  text-transform: capitalize!important;
+  margin-left: 10px!important;
+  background: none!important;
+  border: 1px solid #EC7676!important;
+  padding: 10px 20px!important;
+  color: rgb(0, 0,0,0.8)!important;
+  border-radius: 10px!important;
+  font-size: 16px!important;
 }

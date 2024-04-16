@@ -8,6 +8,7 @@ import Slider from '@mui/material/Slider';
 import Checkbox from '@mui/material/Checkbox';
 import { Button } from '@mui/material'
 import Banner2 from "../Assets/beautyslider.jpg"
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 function Sidebar() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -116,7 +117,7 @@ function Sidebar() {
 
                     </div>
                     <div className="d-flex">
-                        <Button className='btnfilter'>Filter</Button>
+                        <Button className='btnfilter'><FilterAltOutlinedIcon /> Filter</Button>
                     </div>
                 </div>
                 <br />
