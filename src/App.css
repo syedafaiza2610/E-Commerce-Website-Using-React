@@ -948,3 +948,58 @@ ul.breadcrumb li a:hover {
   color: #fff!important;
 
 }
+.addCartSection{
+  width: 100%;
+  height: auto;
+}
+
+.addCartSection .counterSection{
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  border: 1px solid #EC7676;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+
+}
+.addCartSection .counterSection input{
+  width: 60%;
+  height: 40px;
+  padding: 5px;
+  border: 0px;
+  outline: none!important;
+  text-align: center!important;
+  font-size: large;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.btncart{
+  margin: auto;
+  margin-left: 20px!important;
+  border-radius: 10px!important;
+  text-transform: capitalize!important;
+  font-size: 16px!important;
+}
+
+.plus{
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  right: 10px;
+  opacity: 0.5;
+}
+.minus{
+  position: absolute;
+  cursor: pointer;
+  bottom: 2px;
+  right: 10px;
+  opacity: 0.5;
+}

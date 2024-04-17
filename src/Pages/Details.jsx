@@ -7,8 +7,22 @@ import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import Seed from '../Assets/seed.jpg'
 import Seed1 from '../Assets/seed3.webp'
 import Slider from "react-slick";
+import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import { Button } from '@mui/material';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function DetailsPage() {
+  const [inputValue, setinputValue] =useState(1);
+  const plus = () =>{
+     setinputValue(inputValue+1)
+  }
+  const minus = () =>{
+    if (inputValue!==0) {
+      setinputValue(inputValue-1)
+      
+    }
+ }
   const zoomSlider=useRef();
   var settings = {
     dots: false,
@@ -131,9 +145,13 @@ function DetailsPage() {
                         </ul>
                     </div>
                     <div className="addCartSection pt-4 pb-4 d-flex align-items-center">
-                      <div className="counterSection">
+                      <div className="counterSection mr-3">
+                        <input type="number" value={inputValue} />
+                        <span className='plus'><KeyboardArrowUpOutlinedIcon onClick={plus}/></span>
+                        <span className='minus'><KeyboardArrowDownOutlinedIcon onClick={minus}/></span>
                         
                       </div>
+                      <Button className='btnfilter btn-lg btncart'> <ShoppingCartOutlinedIcon/> Add to Cart</Button>
                       
                     </div>
 
