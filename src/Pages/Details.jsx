@@ -11,6 +11,9 @@ import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutl
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { Button } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
+import Sidebar from '../Components/Sidebar';
 
 function DetailsPage() {
   const [inputValue, setinputValue] =useState(1);
@@ -152,6 +155,10 @@ function DetailsPage() {
                         
                       </div>
                       <Button className='btnfilter btn-lg btncart'> <ShoppingCartOutlinedIcon/> Add to Cart</Button>
+                      <Button className=' btncart ml-3 btn-border'> <FavoriteBorderOutlinedIcon/></Button>
+                      <Button className=' btncart ml-3 btn-border'> <CompareArrowsOutlinedIcon/></Button>
+
+
                       
                     </div>
 
@@ -162,6 +169,7 @@ function DetailsPage() {
 
             </div>
             <div className="col-md-3 part2">
+              <Sidebar/>
 
             </div>
           </div>

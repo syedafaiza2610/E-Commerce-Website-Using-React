@@ -902,7 +902,7 @@ ul.breadcrumb li a:hover {
   top: 60%!important;
 }
 .zoomSlider .slick-next{
-  right: -8%!important;
+  right: -3%!important;
   top: 60%!important;
 }
 .zoomSlider .item{
@@ -966,11 +966,13 @@ ul.breadcrumb li a:hover {
 .addCartSection .counterSection input{
   width: 60%;
   height: 40px;
-  padding: 5px;
+  padding: 5px!important;
   border: 0px;
   outline: none!important;
   text-align: center!important;
   font-size: large;
+  margin-top: -4px!important;
+ 
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -1002,4 +1004,25 @@ input[type=number] {
   bottom: 2px;
   right: 10px;
   opacity: 0.5;
+}
+.addCartSection svg{
+  font-size: 28px!important;
+}
+.addCartSection button{
+  height: 50px;
+  min-width: inherit!important;
+}
+.addCartSection button svg{
+  font-size: 30px!important;
+  
+}
+.btn-border{
+  border: 1px solid rgba(0,0,0,0.1)!important;
+  color: #8b8b8f!important;
+}
+.btn-border:hover{
+  border: 1px solid #EC7676!important;
+  background: #EC7676!important;
+  color: #fff!important;
+
 }
