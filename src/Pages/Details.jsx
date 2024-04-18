@@ -102,7 +102,7 @@ function DetailsPage() {
                     </div>
 
                   </Slider>
-
+                 
                 </div>
                 <div className="col-md-7 productInfo">
                   <h1>Maggi 2-Minute Masala Noodles 70 g, Brown</h1>
@@ -112,7 +112,7 @@ function DetailsPage() {
 
                   </div>
                   <div className="priceSection d-flex align-items-center ">
-                    <span className='text priceLarge'>$38</span>
+                    <span className='text priceLarge'>$20</span>
                     <div className="ml-2 d-flex flex-column">
                       <span className='text-org'>26% off</span>
                       <span className='text-b oldPrice'>$52</span>
