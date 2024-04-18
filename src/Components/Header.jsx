@@ -13,12 +13,12 @@ import Navbar from './Navbar';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { MdOutlineLocationOn } from "react-icons/md";
 
 
 
 function Header() {
     const [Categories , setCategories] = useState([
-        'All Categories',
        'Milk & Dairy',
         'Drinks',
         'Clothing & Beauty',
@@ -65,7 +65,7 @@ function Header() {
                             </div>
                             <div className="col-sm-5">
                                 <div className="headerSearch d-flex align-items-center ">
-                                    <Dropdown data={Categories} />
+                                    <Dropdown data={Categories} placeholder={'All Categories'} icon={false} />
                                     <div className="search">
                                         <input type="text" placeholder='Search here' />
                                         <FaSearch className='icon cursor' size={20} />
@@ -74,9 +74,9 @@ function Header() {
                                 </div>
                             </div>
                             <div className="col-sm-5 d-flex align-items-center country">
-                                <div className="ml-auto d-flex align-items-center  rightside">
+                                <div className="ml-auto d-flex align-items-center">
                                     <div className="countrywrapper">
-                                        <Dropdown data={countryList} />
+                                        <Dropdown data={countryList} placeholder={'Your Location'} icon={<MdOutlineLocationOn/>}/>
                                     </div>
                                     <div className='listing'>
                                         <ul className='list list-inline mb-0 headerTabs'>

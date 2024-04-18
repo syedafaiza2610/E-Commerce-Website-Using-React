@@ -14,10 +14,10 @@ import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 
 
 
-function Dropdown({data}) {
+function Dropdown({data , placeholder , icon}) {
     const [isopenselect , setisopenselect] = useState(false)
     const [selected , setselected] = useState(0)
-    const [selecteditem , setselecteditem] = useState('All Categories')
+    const [selecteditem , setselecteditem] = useState(placeholder)
     const openSelect=() =>{
         setisopenselect(!isopenselect)
     }
@@ -29,6 +29,7 @@ function Dropdown({data}) {
     return (
         <ClickAwayListener onClickAway={() => setisopenselect(false)}>
         <div className="selectDropdown cursor position-relative">
+            {icon}
             <span className='openSelect' onClick={openSelect}>{selecteditem}<IoIosArrowDown className='arrow'/></span>
             {
              isopenselect  === true && 
@@ -37,10 +38,11 @@ function Dropdown({data}) {
                  <input type="text"placeholder='Search here' />
              </div>
              <ul className='result'>
+             <li key={0} onClick={() => closeSelect(0 ,placeholder)} className={`${selected === 0 ? 'active' : " "}`}>{placeholder}</li>
                 {
                     data.map((item , index)=>{
                         return(
-                            <li onClick={() => closeSelect(index ,item)} className={`${selected === index ? 'active' : " "}`}>{item}</li>
+                            <li key={index+1} onClick={() => closeSelect(index+1 ,item)} className={`${selected === index+1 ? 'active' : " "}`}>{item}</li>
                     )
                     })
                 }
