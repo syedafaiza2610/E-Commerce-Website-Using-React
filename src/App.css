@@ -1,5 +1,4 @@
 
-
 *{
   margin: 0px;
   padding: 0px;
@@ -9,15 +8,6 @@
   color:#FDC040 ;
   font-size: 20px;
   font-weight: 600;
-
-}
-
-.header{
-  width: 100%;
-  height: auto;
-  margin: auto;
-  padding: 20px 0px;
-  box-shadow: 0 3px 6px rgba(0 0 0 /20%);
 
 }
 .text-b{
@@ -30,6 +20,16 @@ p{
   color: #616161;
   font-size: 19px;
 }
+
+.header{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 20px 0px;
+  box-shadow: 0 3px 6px rgba(0 0 0 /20%);
+
+}
+
 .headerWrapper{
   position: sticky;
   top: 0px;
@@ -46,12 +46,7 @@ p{
 }
 .logo h5{
   font-weight: 800;
-  /* color: #F1B85B; */
   color: #EC7676 ; 
-   /* color:  #76ECAD; 
-  color: #7B4FB6 ; 
-   color: #D09DF3;
-  color:  #ECAD76; */
   font-style: italic;
 }
 
@@ -99,7 +94,7 @@ p{
 
 }
 .search{
-  width: 82%;
+  width: 80%;
   padding-left: 30px;
   position: relative;
 
