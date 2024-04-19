@@ -6,14 +6,17 @@ import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 // import NavbarDarkExample from './location';
 import { FaCodeCompare } from "react-icons/fa6";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { FaRegCircleUser } from "react-icons/fa6";
 import Navbar from './Navbar';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { MdOutlineLocationOn } from "react-icons/md";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-
+import Button from '@mui/material/Button';
+import MyLocationOutlinedIcon from '@mui/icons-material/MyLocationOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
+// import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 
 
 function Header() {
@@ -50,6 +53,7 @@ function Header() {
             console.log(error.message)
         }
     }
+    const [isopendropdown, setisopendropdown] = useState(false)
 
 
     return (
@@ -77,37 +81,55 @@ function Header() {
                                     <div className="countrywrapper">
                                         <Dropdown data={countryList} placeholder={'Your Location'} icon={<MdOutlineLocationOn className='locationicn' />} />
                                     </div>
-                                    <div className='listing'>
-                                        <ul className='list list-inline mb-0 headerTabs'>
-                                            <li className='list-inline-item'>
-                                                <span><FaCodeCompare size={20} />
-                                                    <span className='badge rounded-circle'>3</span>
-                                                    Compare
-                                                </span>
+                                    <ClickAwayListener onClickAway={() => setisopendropdown(false)}>
+                                        <div className='listing'>
+                                            <ul className='list list-inline mb-0 headerTabs'>
+                                                <li className='list-inline-item'>
+                                                    <span><FaCodeCompare size={20} />
+                                                        <span className='badge rounded-circle'>3</span>
+                                                        Compare
+                                                    </span>
 
-                                            </li>
-                                            <li className='list-inline-item'>
-                                                <span><FavoriteBorderOutlinedIcon size={20} />
-                                                    <span className='badge rounded-circle'>2</span>
-                                                    Wishlist
-                                                </span>
+                                                </li>
+                                                <li className='list-inline-item'>
+                                                    <span><FavoriteBorderOutlinedIcon size={20} />
+                                                        <span className='badge rounded-circle'>2</span>
+                                                        Wishlist
+                                                    </span>
 
-                                            </li>
-                                            <li className='list-inline-item'>
-                                                <span><ShoppingCartOutlinedIcon size={20}/>
-                                                    <span className='badge rounded-circle'>2</span>
-                                                    Cart
-                                                </span>
+                                                </li>
+                                                <li className='list-inline-item'>
+                                                    <span><ShoppingCartOutlinedIcon size={20} />
+                                                        <span className='badge rounded-circle'>2</span>
+                                                        Cart
+                                                    </span>
 
-                                            </li>
-                                            <li className='list-inline-item'>
-                                                <span><PersonOutlineOutlinedIcon size={20}/>Account
-                                                </span>
+                                                </li>
+                                                <li className='list-inline-item' >
 
-                                            </li>
+                                                    <span onClick={() => setisopendropdown(!isopendropdown)}><PersonOutlineOutlinedIcon size={20} />Account
+                                                    </span>
+                                                    {
+                                                        isopendropdown !== false &&
+                                                        <ul className='dropdownMenu'>
+                                                            <li><Button> <span><PersonOutlineOutlinedIcon /></span>  My Account</Button></li>
+                                                            <li><Button><span><MyLocationOutlinedIcon /> </span> Order Tracking</Button></li>
+                                                            <li><Button><span><FavoriteBorderOutlinedIcon /></span> Wishlist</Button></li>
+                                                            <li><Button><span><SettingsOutlinedIcon /></span>Setting</Button></li>
+                                                            <li><Button><span><ExitToAppOutlinedIcon /></span>SignOut</Button></li>
 
-                                        </ul>
-                                    </div>
+                                                        </ul>
+                                                    }
+
+
+
+                                                </li>
+
+
+                                            </ul>
+                                        
+                                        </div>
+                                        </ClickAwayListener>
 
                                 </div>
                             </div>
