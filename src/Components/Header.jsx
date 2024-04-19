@@ -3,23 +3,22 @@ import Logo2 from "../Assets/logo2..png"
 import { FaSearch } from "react-icons/fa";
 import Dropdown from './Dropdown';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
-import NavbarDarkExample from './location';
-import Location from './location';
+// import NavbarDarkExample from './location';
 import { FaCodeCompare } from "react-icons/fa6";
-import { FaRegHeart } from "react-icons/fa";
-import { BsCart3 } from "react-icons/bs";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { FaRegCircleUser } from "react-icons/fa6";
 import Navbar from './Navbar';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { MdOutlineLocationOn } from "react-icons/md";
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 
 
 function Header() {
-    const [Categories , setCategories] = useState([
-       'Milk & Dairy',
+    const [Categories, setCategories] = useState([
+        'Milk & Dairy',
         'Drinks',
         'Clothing & Beauty',
         'Fresh Seafood',
@@ -30,24 +29,24 @@ function Header() {
         'Fresh Fruits',
         'Bread & juice'
     ])
-    const  countryList =[];
-    useEffect(()=>{
+    const countryList = [];
+    useEffect(() => {
         getCountry('https://freetestapi.com/api/v1/countries')
 
-    },[])
-    const getCountry= async(url) => {
-        try{
-        await axios.get(url).then((res) =>{
-            if(res!==null){
-                res.data.map((item,index)=>{
-                    countryList.push(item.name)
-                    console.log(item.name)
-                })
-            
-            }
-        })
+    }, [])
+    const getCountry = async (url) => {
+        try {
+            await axios.get(url).then((res) => {
+                if (res !== null) {
+                    res.data.map((item, index) => {
+                        countryList.push(item.name)
+                        console.log(item.name)
+                    })
+
+                }
+            })
         }
-        catch(error){
+        catch (error) {
             console.log(error.message)
         }
     }
@@ -74,27 +73,39 @@ function Header() {
                                 </div>
                             </div>
                             <div className="col-sm-5 d-flex align-items-center country">
-                                <div className="ml-auto d-flex align-items-center">
+                                <div className="d-flex align-items-center country2">
                                     <div className="countrywrapper">
-                                        <Dropdown data={countryList} placeholder={'Your Location'} icon={<MdOutlineLocationOn/>}/>
+                                        <Dropdown data={countryList} placeholder={'Your Location'} icon={<MdOutlineLocationOn className='locationicn' />} />
                                     </div>
                                     <div className='listing'>
                                         <ul className='list list-inline mb-0 headerTabs'>
                                             <li className='list-inline-item'>
-                                                <span className='spn'><FavoriteBorderOutlinedIcon size={20} /> Wishlist
+                                                <span><FaCodeCompare size={20} />
+                                                    <span className='badge rounded-circle'>3</span>
+                                                    Compare
                                                 </span>
 
                                             </li>
                                             <li className='list-inline-item'>
-                                                <span className='spn'><BsCart3 size={20} /> Cart
-                                                    <span className='badge rounded-circle'>6</span>
-                                                </span>
-                                            </li>
-                                            <li className='list-inline-item'>
-                                                <span className='spn'><FaRegCircleUser size={20} /> Account
+                                                <span><FavoriteBorderOutlinedIcon size={20} />
+                                                    <span className='badge rounded-circle'>2</span>
+                                                    Wishlist
                                                 </span>
 
                                             </li>
+                                            <li className='list-inline-item'>
+                                                <span><ShoppingCartOutlinedIcon size={20}/>
+                                                    <span className='badge rounded-circle'>2</span>
+                                                    Cart
+                                                </span>
+
+                                            </li>
+                                            <li className='list-inline-item'>
+                                                <span><PersonOutlineOutlinedIcon size={20}/>Account
+                                                </span>
+
+                                            </li>
+
                                         </ul>
                                     </div>
 
