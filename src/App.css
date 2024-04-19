@@ -63,6 +63,7 @@ p{
   font-weight: 600;
   border-radius: 30px;
   box-shadow: 0 3px 6px rgba(0 0 0 /20%);
+
  
 }
 .selectDropdown{
@@ -70,24 +71,10 @@ p{
   font-weight: 500;
   font-size: 16px;
   position: relative;
+  margin: 4px!important;
+  margin-left: 12px!important;
 }
-/* .selectDropdown:after{
-  content:''; 
-   width: 1px;
-   height:30px; 
-   background:#9365c9;
-   opacity: 0.5;
-   position: absolute;
-   top:5px; 
-   right:-22px;
-   bottom: 0px;
-} */
-.selectDropdownlocation{
-  width: 22%;
-  font-weight: 500;
-  font-size: 16px;
-  border-radius: 20px;
-}
+
 
 .cursor{
   cursor: pointer;
@@ -169,8 +156,8 @@ color: rgb(0, 0,0,0.7);
 .arrow{
   position: absolute;
   top: 15px;
-  right: 10px;
-  left:130px;
+  right: 10px!important;
+  left:110px;
   font-size: 18px;
   color: #9365c9;
 }
@@ -187,51 +174,70 @@ color: rgb(0, 0,0,0.7);
  border: 1px solid  #AD76EC!important;
  color: #AD76EC;
  height: 50px;
- padding-left: 10px;
+ padding-left: 10px!important;
  display: flex;
  align-items: center;
  box-shadow: 0 3px 6px rgba(0 0 0 /20%);
  border-radius: 50px!important;
-
+ padding-right: 22px!important;
+ margin-left: -20px!important;
 }
-.arrow1{
+.locationicn{
+  position: absolute;
+  top: 12px;
+  left:-12px;
+  font-size: 19px;
+  color: #9365c9;
+  opacity: 0.7!important;
+  margin-left: -7px!important;
+  padding-left: -3px!important;
+}
+/* .arrow1{
   position: absolute;
   top: 15px;
   right: 50px;
   left:140px;
   font-size: 14px;
+} */
+.country2{
+  margin-left: auto!important;
 }
 .country .headerTabs {
   padding-left: 60px !important;
 
 }
+.listing{
+  margin-left: auto!important;
+}
+.headerTabs{
+  padding-left: 30px!important;
+  margin-bottom: 0px!important;
+  margin-left: -50px!important;
+}
 .headerTabs li{
-  justify-content: space-evenly;
-  margin: 3px;
- 
+  position: relative;
+  margin-left: -3px;
 }
-.spn{
+.headerTabs li span{
   font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
-
  
-
+}
+.headerTabs li span svg{
+  margin-right:8px;
 }
 
-.listing li{
-  padding-left: -20px!important;
-
-}
-.spn .badge{
-  width: 21px;
-  height: 21px;
+span .badge{
+  width: 24px;
+  height: 23px;
   color: #fff;
   font-weight: 400;
-  position: relative;
-  top: -10px;
-  left: -50px;
+  position: absolute;
+  top: -15px;
+  left: 9px;
+  font-size: 14px!important;
   background-color: #EC7676!important;
+  text-align: center!important;
 }
 
 .rightside{
