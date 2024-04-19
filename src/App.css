@@ -139,6 +139,7 @@ font-size: 16px;
 width: 100%;
 padding: 7px;
 color: rgb(0, 0,0,0.7);
+border-radius: 7px;
 }
 .result li:hover{
   background-color: #AD76EC;
@@ -147,6 +148,37 @@ color: rgb(0, 0,0,0.7);
 .result li.active{
  background: #f1f1f1;
  color: black;
+}
+.dropdownMenu{
+         position: absolute;
+         top: 100%;
+         right: 0px;
+         width: 180px;
+         height: auto;
+         background: #fff!important;
+         padding: 10px 0px!important;
+         box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+}
+.dropdownMenu li{
+  list-style: none;
+  width: 100%;
+  margin: 0px!important;
+}
+.dropdownMenu li button{
+  width: 100%!important;
+  justify-content: flex-start!important;
+  color: rgba(0 0 0 /0.7)!important;
+  text-transform: capitalize!important;
+  font-size: 14px!important;
+  padding: 8px 15px!important;
+}
+.dropdownMenu li button:hover{
+  background: #f1f1f1!important;
+}
+.dropdownMenu li button span svg{
+  font-size: 20px;
+  opacity: 0.7!important;
+  margin-right: 8px!important;
 }
 .openSelect{
   display: block;
@@ -170,17 +202,17 @@ color: rgb(0, 0,0,0.7);
 }
 
 .countrywrapper{
-  width: 180px!important;
+  width: 170px!important;
  border: 1px solid  #AD76EC!important;
  color: #AD76EC;
- height: 50px;
+ height: 45px;
  padding-left: 10px!important;
  display: flex;
  align-items: center;
  box-shadow: 0 3px 6px rgba(0 0 0 /20%);
  border-radius: 50px!important;
  padding-right: 22px!important;
- margin-left: -20px!important;
+ margin-left: -30px!important;
 }
 .locationicn{
   position: absolute;
@@ -216,7 +248,7 @@ color: rgb(0, 0,0,0.7);
 }
 .headerTabs li{
   position: relative;
-  margin-left: -3px;
+  margin-left: -2px;
 }
 .headerTabs li span{
   font-size: 16px;
@@ -294,9 +326,11 @@ span .badge{
 }
 .phone{
   color: #EC7676;
+  
 }
 .info p{
   color: #9365c9;
+  font-size: 15px;
 }
 .home-slider{
   padding: 30px 0px;

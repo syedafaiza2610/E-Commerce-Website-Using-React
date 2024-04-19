@@ -28,10 +28,10 @@ function Navbar() {
                                     <Button><Link  to="/shop">Shop</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="/products">Products <IoIosArrowDown /></Link></Button>
+                                    <Button><Link  to="/listing">Vendors <IoIosArrowDown /></Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link  to="/contact">Contact</Link></Button>
+                                    <Button><Link  to="/contact">Mega Menu</Link></Button>
                                 </li>
                                 <li className='list-inline-item'>
                                     <Button><Link to="/register">Register</Link></Button>
