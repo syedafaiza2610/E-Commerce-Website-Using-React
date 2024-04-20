@@ -8,6 +8,10 @@ import Banner from '../Components/Banner';
 import Products from '../Components/Products';
 import Shampoo from '../Assets/shampo.png'
 import SliderHome from '../Components/Slider';
+import TopProducts from './TopProducts';
+import Newsletter from '../Components/Newsletter';
+import NewsletterPic from '../Assets/news3.png'
+import { Link } from 'react-router-dom';
 
 
 function HomeSlider() {
@@ -23,7 +27,7 @@ function HomeSlider() {
   return (
     <>
       <Header />
-      {/* <SliderHome/>
+      <SliderHome/>
 
       <Category /> 
       <Banner />
@@ -147,7 +151,49 @@ function HomeSlider() {
 
        
 
-      </section> */}
+      </section>
+      <section className="topProductSection">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col">
+              <TopProducts title="Top Selling"/>
+
+            </div>
+            <div className="col">
+            <TopProducts  title="Trending Products"/>
+              
+            </div>
+            <div className="col">
+            <TopProducts  title="Recently Added"/>
+              
+            </div>
+            <div className="col">
+            <TopProducts  title="Top Rated"/>
+              
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <section className='newsLetterSection'>
+        <div className="container-fluid">
+          <div className="box-news d-flex align-align-items-center">
+            <div className="infonews">
+              <h2>Stay home & get your daily needs from our shop</h2>
+              <p>Start Your daily shopping with <Link>Shopsavvy</Link></p>
+              <Newsletter/>
+
+
+            </div>
+            <div className="Imgnews">
+              <img src={NewsletterPic} alt="" />
+            </div>
+            
+             
+          </div>
+        </div>
+
+      </section>
 
 
 

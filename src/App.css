@@ -551,7 +551,7 @@ h2{
   transition: all 0.3s ease-in-out!important;
 }
 .imgbanner{
-  height: 240px!important;
+  height: 270px!important;
 }
 .bannerSection{
   padding: 25px 0px;
@@ -648,14 +648,14 @@ padding: 25px 0px;
   line-height: 25px;
 
 }
-.productThumb .price{
+.price{
   color: #EC7676;
   font-weight: bold;
   font-size: 22px;
   margin-right: 20px;
 }
 
-.productThumb .oldprice{
+.oldprice{
   color: #000;
   font-weight: bold;
   opacity: 0.6;
@@ -1129,3 +1129,157 @@ input[type=number] {
   color: #fff!important;
 
 }
+.topProductSection{
+  padding: 35px 0px;
+}
+.topSelling_box h3{
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  padding-bottom: 20px;
+  position: relative;
+  margin-bottom: 30px!important;
+
+}
+.topSelling_box .Img{
+  width: 30%;
+  height: 100px;
+  background: #ccc;
+  /* margin-top: -50px; */
+
+}
+.topSelling_box .right-info{
+  width: 70%;
+}
+.topSelling_box .right-info h5{
+  font-weight: 500;
+  opacity: 0.9;
+  font-size: 20px!important;
+}
+.topSelling_box .right-info a{
+  text-decoration: none;
+  color: #000!important;
+ 
+}
+.topSelling_box .items{
+  padding: 20px 0px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.topSelling_box .items:hover{
+ transform: translateY(-10px);
+}
+
+.topSelling_box h3:after{
+  content: " ";
+  width: 100%;
+  height: 3px;
+  background: #ccc;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+ 
+}
+.topSelling_box h3:before{
+  content: " ";
+  width: 30%;
+  height: 3px;
+  background:#EC7676;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+}
+.newsLetterBanner{
+ width: 600px;
+ height: 80px;
+ position: relative;
+ bottom: 150px;
+ left: 9px;
+ z-index: 10;
+ text-align: center;
+margin-left: 200px!important;
+
+}
+.newsLetterBanner input{
+  width: 100%;
+  height: 80%;
+  border-radius: 60px!important;
+  border: 0px;
+  outline: none!important;
+  padding-left: 80px ;
+  font-size: 20px!important;
+  padding-right: 200px!important;
+
+}
+
+.newsLetterBanner button{
+padding: 10px 40px!important;
+border-radius: 50px!important;
+color: #fff!important;
+position: absolute;
+top: 0px;
+right: 0px;
+height: 80%!important;
+font-size: 22px!important;
+text-transform: capitalize!important;
+}
+.newsLetterBanner svg{
+position: absolute;
+top: 15px;
+left: 35px;
+z-index: 10;
+font-size: 30px!important;
+transform: rotate(-19deg);
+opacity: 0.8;
+}
+.newsLetterSection{
+  width: 100%;
+  height: auto;
+  border-radius: 20px!important;
+}
+.newsLetterSection .box-news{
+  background-color:#f8acac;
+  height: 300px;
+  width: 100%;
+  padding: 40px!important;
+
+
+}
+.newsLetterSection .box-news .newsLetterBanner{
+  position: relative!important;
+  left: 0px!important;
+  bottom: inherit!important;
+}
+
+.newsLetterSection .box-news .infonews {
+  background-color: #f8acac;
+  height: auto!important;
+  width: 70%;
+
+}
+.newsLetterSection .box-news .infonews h2 {
+  font-size: 40px!important;
+  color: #41003A!important;
+  text-align: left;
+  font-weight: 600!important;
+  
+}
+.newsLetterSection .box-news .infonews p{
+  font-size: 25px!important;
+  text-align: center;
+}
+.newsLetterSection .box-news .infonews p a{
+  color: #41003A;
+  font-weight: bold;
+}
+.newsLetterSection .box-news .Imgnews img{
+  background-color:#f8acac;
+  height:250px!important;
+  width: 100%;
+}
+/* .Imgnews img{
+  height: 200px!important;
+} */
+
+
