@@ -10,6 +10,9 @@
   font-weight: 600;
 
 }
+.text-p{
+  color: #EC7676;
+}
 #root{
   zoom: 90%;
 }
@@ -379,7 +382,20 @@ span .badge{
   font-weight: 400!important;
 }
 .mega_Menu{
-  height: 300px;
+  height: auto;
+  padding: 30px 45px!important;
+
+}
+.mega_Menu .col ul li {
+  margin-bottom: 10px!important;
+  display: block!important;
+  margin-left: 0px!important;
+}
+.mega_Menu .col ul li a{
+ color: rgb(0, 0,0,0.8);
+ font-size: 18px;
+ text-decoration: none;
+ margin-left: -30px!important;
 }
 .home-slider{
   padding: 30px 0px;
