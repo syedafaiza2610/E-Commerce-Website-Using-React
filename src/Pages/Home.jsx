@@ -23,7 +23,7 @@ function HomeSlider() {
   return (
     <>
       <Header />
-      <SliderHome/>
+      {/* <SliderHome/>
 
       <Category /> 
       <Banner />
@@ -147,7 +147,7 @@ function HomeSlider() {
 
        
 
-      </section>
+      </section> */}
 
 
 
