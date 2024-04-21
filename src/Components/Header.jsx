@@ -3,7 +3,6 @@ import Logo2 from "../Assets/logo2..png"
 import { FaSearch } from "react-icons/fa";
 import Dropdown from './Dropdown';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
-// import NavbarDarkExample from './location';
 import { FaCodeCompare } from "react-icons/fa6";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Navbar from './Navbar';
@@ -16,7 +15,7 @@ import Button from '@mui/material/Button';
 import MyLocationOutlinedIcon from '@mui/icons-material/MyLocationOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
-// import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+
 
 
 function Header() {

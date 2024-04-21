@@ -14,6 +14,7 @@ import NewsletterPic from '../Assets/news3.png'
 import { Link } from 'react-router-dom';
 
 
+
 function HomeSlider() {
   var settings = {
     dots: false,
@@ -27,7 +28,7 @@ function HomeSlider() {
   return (
     <>
       <Header />
-      <SliderHome/>
+      {/* <SliderHome/>
 
       <Category /> 
       <Banner />
@@ -174,7 +175,7 @@ function HomeSlider() {
           </div>
         </div>
 
-      </section>
+      </section> */}
       <section className='newsLetterSection'>
         <div className="container-fluid">
           <div className="box-news d-flex align-align-items-center">
