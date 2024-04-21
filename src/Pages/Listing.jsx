@@ -5,8 +5,13 @@ import Sidebar from '../Components/Sidebar'
 import Product from './Products'
 import Products from '../Components/Products'
 import { Button } from '@mui/material'
+import { useState } from 'react'
+import GridViewIcon from '@mui/icons-material/GridView';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 function Listing() {
+    const [isopendropdown, setisopendropdown] = useState(false)
+    const [isopendropdown2, setisopendropdown2] = useState(false)
     return (
         <>
             <Header />
@@ -38,15 +43,36 @@ function Listing() {
                                 <div className="topStrip d-flex align-items-center">
                                     <p className='mb-0'>We Found <span className='text'> 29 </span> items for you!</p>
                                     <div className="btns d-flex align-items-center">
-                                        <div className="tab">
-                                            <Button className='bttn'>Show : 50</Button>
-                                        </div>
-                                        <div className="tab">
-                                            <Button className='bttn'>Sort by : Features</Button>
-                                            {/* <ul className='dropdownMenu'>
-                                                <li><Button className='align-align-items-center'>My Account</Button></li>
+                                        <div className="tab position-relative">
+                                            <Button className='bttn'  onClick={() => setisopendropdown2(!isopendropdown2)}><GridViewIcon/>Show : 50</Button>
+                                            {
+                                                        isopendropdown2 !== false &&
+                                            <ul className='dropdownMenu'>
+                                                            <li><Button onClick={() => setisopendropdown2(false)} className='align-items-center'>50</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown2(false)}className='align-items-center'>100</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown2(false)}className='align-items-center'>150</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown2(false)}className='align-items-center'>2000</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown2(false)}className='align-items-center'>All</Button></li>
+                                                      
 
-                                            </ul> */}
+                                                        </ul>
+                                                   }
+                                        </div>
+                                        <div className="tab position-relative">
+                                            <Button className='bttn'  onClick={() => setisopendropdown(!isopendropdown)}><FilterAltOutlinedIcon/>Features</Button>
+                                            {
+                                                        isopendropdown !== false &&
+                                            <ul className='dropdownMenu'>
+                                                            <li><Button onClick={() => setisopendropdown(false)} className='align-items-center'>Featured</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown(false)} classNameclassName='align-items-center'>Price:Low to High</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown(false)} classNameclassName='align-items-center'>Price:High to Low</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown(false)} classNameclassName='align-items-center'>Release Date</Button></li>
+                                                            <li><Button onClick={() => setisopendropdown(false)} classNameclassName='align-items-center'>Avg. Rating</Button></li>
+                                                      
+
+                                                        </ul>
+                                                   }
+                                          
                                         </div>
 
                                     </div>
