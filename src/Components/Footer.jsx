@@ -14,6 +14,12 @@ import AppStore from "../Assets/app-store.jpg"
 import Google from '../Assets/google.jpg'
 import { Link } from 'react-router-dom';
 import Payment from '../Assets/payment.png'
+import { MdOutlineHeadphones } from "react-icons/md";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import PinterestIcon from '@mui/icons-material/Pinterest';
 
 
 const Footer = () => {
@@ -86,6 +92,7 @@ const Footer = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-3 part1-footer">
+
               <div className='logo'><img className='logoImg' src={Logo2} alt="" />
                 <h5>SHOPSAVVY</h5></div>
               <p>Awesome multipurpose e-commerce store</p>
@@ -151,14 +158,83 @@ const Footer = () => {
               <br>
               </br>
               <p>Secured Payment Gateways</p>
-              <img src={Payment}alt="" />
+              <img src={Payment} alt="" />
 
 
             </div>
           </div>
+          <hr></hr>
+          <div className="row lastStrip">
+            <div className="col-md-3">
+              <p>Copyright © 2024 Shopsavvy Multipurpose E-Commerce all rights reserved.</p>
+
+            </div>
+            <div className="col-md-6 d-flex">
+              <div className="m-auto d-flex align-items-center">
+                <div className="phone  d-flex align-items-center">
+                  <span><MdOutlineHeadphones size={30} /></span>
+                  <div className="info ml-3">
+                    <h5 className='mb-0'>021-1234567</h5>
+                    <p className='mb-0'>24/7 Support Center</p>
+
+                  </div>
+
+                </div>
+
+              </div>
+              <div className="m-auto d-flex align-items-center">
+                <div className="phone  d-flex align-items-center">
+                  <span><MdOutlineHeadphones size={30} /></span>
+                  <div className="info ml-3">
+                    <h5 className='mb-0'>021-1234567</h5>
+                    <p className='mb-0'>24/7 Support Center</p>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+            <div className="col-md-3 part3-footer">
+              <div className="d-flex align-items-center">
+                <h5>Follow us</h5>
+                <ul className='list list-inline '>
+                  <li className='list-inline-item'>
+                    <a href='#'><FacebookOutlinedIcon/></a>
+
+                  </li>
+                  <li className='list-inline-item'>
+                  <a href='#'><TwitterIcon/></a>
+
+                  </li>
+                  <li className='list-inline-item'>
+                  <a href='#'><InstagramIcon/></a>
+
+                  </li>
+                  <li className='list-inline-item'>
+                  <a href='#'><YouTubeIcon/></a>
+
+                  </li>
+                  <li className='list-inline-item'>
+                  <a href='#'><PinterestIcon/></a>
+
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+            </div>
+
+
+
+          </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   )
 }
 

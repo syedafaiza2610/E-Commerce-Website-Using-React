@@ -328,7 +328,7 @@ span .badge{
   margin-bottom: 0px;
 }
 .info h5{
-  color: #EC7676;
+  color: #eb6363;
   margin-bottom: 0px!important;
   line-height: 30px!important;
 }
@@ -336,11 +336,11 @@ span .badge{
   margin-left:10px;
 }
 .phone{
-  color: #EC7676;
+  color: #fd6767;
   
 }
 .info p{
-  color: #9365c9;
+  color: #582197;
   font-size: 15px;
   margin-bottom: 0px!important;
 }
@@ -1282,6 +1282,7 @@ opacity: 0.8;
 .footerWrapper{
   padding: 45px 0px;
   width: 100%;
+  background: #eaeaec;
 
 }
 .footerWrapper .footerBoxes .box-footer{
@@ -1320,6 +1321,7 @@ opacity: 0.8;
 }
 footer{
   padding: 60px 0px!important;
+  padding-bottom: 0px!important;
 }
 footer p ,footer a{
 font-size: 18px;
@@ -1357,3 +1359,32 @@ footer .part2-footer li a:hover{
   padding-left: 5px;
 
 }
+footer .lastStrip{
+  padding: 25px 0px;
+  
+}
+.part3-footer ul{
+  margin-bottom: 0px;
+  padding-left: 25px;
+}
+.part3-footer ul h5{
+  margin-bottom: 0px;
+}
+.part3-footer ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #eb6363;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.part3-footer ul li a svg{
+  color: #fff!important;
+}
+.part3-footer ul li a:hover{
+  background:rgb(65, 64, 64);
+}
+
