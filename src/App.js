@@ -7,7 +7,6 @@ import HomeSlider from './Pages/Home';
 import About from './Pages/About';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
-import Product from './Pages/Products';
 import Contact from './Pages/Contact';
 import ErrorPage from './Pages/Error';
 import Footer from './Components/Footer';
@@ -30,7 +29,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/products' element={<Product/>}/>
+        <Route path='/listing' element={<Listing/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='*' element={<ErrorPage/>}/>
         

@@ -4,8 +4,6 @@ import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom'
 import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
-import Seed from '../Assets/seed.jpg'
-import Seed1 from '../Assets/seed3.webp'
 import Slider from "react-slick";
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
@@ -14,9 +12,19 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
 import Sidebar from '../Components/Sidebar';
-
+import Products from '../Components/Products'
 
 function DetailsPage() {
+
+  var related = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    fade: false,
+    arrows: true
+  };
   const [inputValue, setinputValue] = useState(1);
   const plus = () => {
     setinputValue(inputValue + 1)
@@ -123,9 +131,13 @@ function DetailsPage() {
 
                     </div>
                   </div>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti dolorem nihil illo corporis dolore aliquid consectetur
-                    laboriosam excepturi animi iste, dicta mollitia placeat distinctio et
-                    numquam provident debitis voluptas quis!</p>
+                  <p>Maggi 2-Minutes Noodles have been a classic Indian snack for a good few decades now.
+                    Nestle brings you another delicious instant food product - Maggi 2-Minute Masala Noodles!
+                    These Maggi noodles offer you the delicious masala flavour that will leave you wanting for more.
+                    It is not just loved by young ones but adults too. For every busy day or lazy evening,
+                    these noodles are easy to make and are perfect for those untimely hunger pangs.
+                    They are made with all-natural ingredients and offers you a lip-smacking taste as
+                    they are loaded with authentic flavours. So go ahead, buy Maggi 2-Minute Masala Noodle online today!</p>
 
                   <div className="productSize d-flex align-items-center">
                     <span>Size / Weight:</span>
@@ -176,9 +188,9 @@ function DetailsPage() {
           <div className="card mt-5 detailsPageTabs">
             <div className="customTabs">
               <ul className='list list-inline'>
-                <li className='list-inline-item'><Button onClick={() => setactiveTabs(0)}>Description</Button></li>
-                <li className='list-inline-item'><Button onClick={() => setactiveTabs(1)}>Additional Info</Button></li>
-                <li className='list-inline-item'><Button onClick={() => setactiveTabs(2)}>Reviews (3)</Button></li>
+                <li className='list-inline-item'><Button className={`${activeTabs === 0 && 'active'}`} onClick={() => setactiveTabs(0)}>Description</Button></li>
+                <li className='list-inline-item'><Button className={`${activeTabs === 1 && 'active'}`} onClick={() => setactiveTabs(1)}>Additional Info</Button></li>
+                <li className='list-inline-item'> <Button className={`${activeTabs === 2 && 'active'}`} onClick={() => setactiveTabs(2)}>Reviews (3)</Button></li>
 
               </ul>
 
@@ -200,13 +212,9 @@ function DetailsPage() {
                   </p>
                   <br></br>
 
-                  <h3>Sugested Use</h3>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quasi,
-                    tempora harum sunt vitae molestiae, expedita hic sed architecto quibusdam
-                    doloribus corporis quo reiciendis corrupti eum cumque numquam. Corrupti, aspernatur?</p>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi nam ullam laborum quibusdam
-                    doloribus possimus inventore architecto facilis nisi
-                    sunt obcaecati odit id, consectetur reprehenderit incidunt dolorem illum ipsam! Exercitationem.</p>
+                  <h3>Features & Details
+                  </h3>
+                  <p>Made from the finest quality ingredients</p>
                   <br></br>
 
                 </div>
@@ -258,7 +266,7 @@ function DetailsPage() {
 
                 <div className="tabcontent">
                   <div className="row">
-                    <div className="col-md-9">
+                    <div className="col-md-8">
                       <h3>Customer Question & Answers</h3>
                       <br>
                       </br>
@@ -340,23 +348,133 @@ function DetailsPage() {
                         </div>
 
                       </div>
-                      <div className="col-md-3">
+                      <br>
+                      </br>
+                      <div className='reviewform'>
+                        <h4>Add a review</h4> <br></br>
+                        <div className="form-group">
+                          <textarea className='form-control' placeholder='Write a review'></textarea>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <input type="text" className='form-control' placeholder='Name' />
+                            </div>
+                          </div>
+
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <input type="email" className='form-control' placeholder='Email' />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <input type="text" className='form-control' placeholder='Website' />
+                        </div>
+
+                        <div className="form-group">
+                          <Button className='btnfilter btn-lg'>Submit Review</Button>
+                        </div>
+
+
 
                       </div>
+
+                    </div>
+                    <div className="col-md-4 pl-5">
+                      <h4>Customer Reviews</h4>
+                      <br />
+                      <div className="d-flex align-items-center mt-2">
+                        <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+                        <strong className='str'>4.8 out of 5</strong>
+                      </div>
+                      <br />
+                      <div className="box-pro d-flex align-items-center ">
+                        <span className='mr-3'>5 Star</span>
+                        <div class="progress" style={{ width: '85%', height: '20px' }}>
+
+                          <div class="progress-bar bg-success" style={{ width: '85%', height: '20px' }}>85%</div>
+                        </div>
+                      </div>
+                      <div className="box-pro d-flex align-items-center ">
+                        <span className='mr-3'>4 Star</span>
+                        <div class="progress" style={{ width: '85%', height: '20px' }}>
+
+                          <div class="progress-bar bg-success" style={{ width: '65%', height: '20px' }}>65%</div>
+                        </div>
+                      </div>
+                      <div className="box-pro d-flex align-items-center ">
+                        <span className='mr-3'>3 Star</span>
+                        <div class="progress" style={{ width: '85%', height: '20px' }}>
+
+                          <div class="progress-bar bg-success" style={{ width: '45%', height: '20px' }}>45%</div>
+                        </div>
+                      </div>
+                      <div className="box-pro d-flex align-items-center ">
+                        <span className='mr-3'>2 Star</span>
+                        <div class="progress" style={{ width: '85%', height: '20px' }}>
+
+                          <div class="progress-bar bg-success" style={{ width: '40%', height: '20px' }}>40%</div>
+                        </div>
+                      </div>
+                      <div className="box-pro d-flex align-items-center ">
+                        <span className='mr-3'>1 Star </span>
+                        <div class="progress" style={{ width: '85%', height: '20px' }}>
+
+                          <div class="progress-bar bg-success" style={{ width: '35%', height: '20px' }}>35%</div>
+                        </div>
+                      </div>
+
                     </div>
 
-                   
+
+
+
                   </div>
+
+
                 </div>
+
               }
 
             </div>
+          </div>
+          <br/>
+
+          <div className="relatedProducts pt-5 pb-4">
+            <h2 className='hd mb-0 mt-0'>Related Products</h2>
+            <br/>
+          <Slider {...related} className='prodSlider'>
+              <div className="item">
+              <Products tag="new"/>
+              </div>
+              <div className="item">
+              <Products tag="best"/>
+              </div>
+              <div className="item">
+              <Products tag="new"/>
+              </div>
+              <div className="item">
+              <Products tag="beauty"/>
+              </div>
+              <div className="item">
+              <Products tag="new"/>
+              </div>
+              <div className="item">
+              <Products tag="sale"/>
+              </div>
+              <div className="item">
+              <Products tag="new"/>
+              </div>
+           
+          </Slider>
+
           </div>
         </div>
 
 
 
-      </div>
+      </div >
 
 
     </>

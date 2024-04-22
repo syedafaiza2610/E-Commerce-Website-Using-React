@@ -240,7 +240,8 @@ border-radius: 7px;
   font-size: 14px;
 } */
 .country2{
-  margin-left: auto!important;
+  margin-left:25px!important;
+ 
 }
 .country .headerTabs {
   padding-left: 60px !important;
@@ -256,10 +257,10 @@ border-radius: 7px;
 }
 .headerTabs li{
   position: relative;
-  margin-left: -2px;
+  margin-left: 4px;
 }
 .headerTabs li span{
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
  
 }
@@ -980,6 +981,10 @@ ul.breadcrumb li a:hover {
   color: #EC7676;
   text-decoration: none;
 }
+.productInfo{
+  padding-left: 80px;
+
+}
 .detailsPage .productInfo .priceSection .priceLarge{
      font-size: 55px;
      font-weight: bold;
@@ -1435,6 +1440,11 @@ footer .lastStrip{
   height: 100px;
 
 }
+.customTabs  button.active{
+color: #eb6363!important;
+}
+
+
 .info-rev .rat{
   margin-left: auto!important;
 
@@ -1447,3 +1457,61 @@ footer .lastStrip{
   height: 100%;
   object-fit: cover;
 }
+.reviewform .form-group{
+  margin-bottom: 25px!important;
+}
+.reviewform .form-group .form-control{
+  height: 80px;
+  font-size: 20px;
+  padding-left: 20px;
+
+}
+.reviewform .form-group textarea.form-control{
+  height: 200px;
+  padding: 25px;
+}
+.btn-lg{
+  border-radius: 10px!important;
+text-transform: capitalize!important;
+padding: 10px 25px!important;
+font-size: 20px!important;
+
+}
+.str{
+  margin-left: 5px;
+}
+.box-pro{
+  margin-bottom: 10px;
+
+}
+.box-pro span{
+  margin-right: 10px;
+
+}
+.relatedProducts .item{
+  padding: 15px 5px;
+  padding-right: 25px!important;
+}
+.relatedProducts h2{
+  position: relative;
+}
+.relatedProducts h2:after{
+  content: '';
+  width: 10%;
+  height: 3px;
+  background: #f0f0f0;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+}
+.relatedProducts h2:before{
+  content: '';
+  width: 5%;
+  height: 3px;
+  background: #fcb0b0;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  z-index: 10;
+}
+

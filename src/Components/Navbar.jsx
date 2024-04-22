@@ -40,7 +40,7 @@ function Navbar() {
                                     </div>
                                 </li>
                                 <li className='list-inline-item'>
-                                    <Button><Link to="/listing">Vendors</Link></Button>
+                                    <Button><Link to="">Vendors</Link></Button>
                                     <div className="dropdown_menu">
                                         <ul>
                                             <li><Button><Link to="">Vendor 1</Link></Button></li>
@@ -108,6 +108,7 @@ function Navbar() {
                                     <div className="dropdown_menu">
                                         <ul>
                                             <li><Button><Link to="/about">About us</Link></Button></li>
+                                            <li><Button><Link to="/listing">Products</Link></Button></li>
                                             <li><Button><Link to="/contact">Contact</Link></Button></li>
                                             <li><Button><Link to="/about">My Account</Link></Button></li>
                                             <li><Button><Link to="/login">Login</Link></Button></li>
