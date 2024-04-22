@@ -72,8 +72,10 @@ function Header() {
                                         <input type="text" placeholder='Search here' />
                                         <FaSearch className='icon cursor' size={20} />
                                     </div>
+    
 
                                 </div>
+                                
                             </div>
                             <div className="col-sm-5 d-flex align-items-center country">
                                 <div className="d-flex align-items-center country2">
