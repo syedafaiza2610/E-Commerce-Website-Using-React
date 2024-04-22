@@ -816,12 +816,12 @@ padding: 25px 0px;
   max-width: 20%!important;
   flex: 0 0 20%!important;
 }
-.Sidebar .card{
+ .card{
   padding: 25px;
 border-radius: 10px!important;
 margin-top: 40px;
 }
-.Sidebar .card .catlist .catitem{
+.card .catlist .catitem{
   padding: 10px;
   border: 1px solid rgba(0,0,0,0.05);
   cursor: pointer;
@@ -829,10 +829,10 @@ margin-top: 40px;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
 }
-.Sidebar .card .catlist .catitem:hover{
+ .card .catlist .catitem:hover{
   border: 1px solid rgba(0,0,0,0.2);
 }
-.Sidebar .card .catlist .catitem h4{
+ .card .catlist .catitem h4{
   color: #000;
   font-size: 14px;
 }
@@ -1401,4 +1401,49 @@ footer .lastStrip{
 .part3-footer ul li a:hover{
   background:rgb(65, 64, 64);
 }
+.detailsPageTabs ul li{
+  margin-right: 30px!important;
+}
+.detailsPageTabs ul li button{
+  padding: 10px 25px!important;
+  border: 1px solid rgb(0, 0,0,0.2)!important;
+  font-size: 19px!important;
+  text-transform: capitalize!important;
+  border-radius: 30px!important;
+  color: #000!important;
+}
+.tabcontent table tr th{
+  font-weight: 700;
+  font-size: 18px;
+}
+.tabcontent table tr td{
 
+  font-size: 18px;
+}
+.reviewsCard{
+  margin-bottom: 25px!important;
+}
+.reviewsCard .imagerev{
+  width: 100px;
+}
+.reviewsCard .rounded-circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+
+}
+.info-rev .rat{
+  margin-left: auto!important;
+
+}
+.info-rev h5 ,p{
+  padding-left: 10px;
+}
+.reviewsCard .rounded-circle img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
