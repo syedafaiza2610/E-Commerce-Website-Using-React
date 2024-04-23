@@ -1076,7 +1076,7 @@ ul.breadcrumb li a:hover {
   height: auto;
 }
 
-.addCartSection .counterSection{
+.counterSection{
   border-radius: 10px;
   width: 100px;
   height: 50px;
@@ -1086,7 +1086,7 @@ ul.breadcrumb li a:hover {
   position: relative;
 
 }
-.addCartSection .counterSection input{
+.counterSection input{
   width: 60%;
   height: 40px;
   padding: 5px!important;
@@ -1117,14 +1117,14 @@ input[type=number] {
 .plus{
   position: absolute;
   cursor: pointer;
-  top: 2px;
+  top: -2px;
   right: 10px;
   opacity: 0.5;
 }
 .minus{
   position: absolute;
   cursor: pointer;
-  bottom: 2px;
+  bottom: -2px;
   right: 10px;
   opacity: 0.5;
 }
@@ -1311,13 +1311,15 @@ opacity: 0.8;
   
 }
 .footerWrapper .footerBoxes .box-footer .info-footer{
-  padding-left: 25px;
+  padding-left: 20px;
 }
 .footerWrapper .footerBoxes .box-footer .info-footer p{
   margin-bottom: 0px;
   font-size: 18px;
   color: #000;
   opacity: 0.8;
+  padding-left: 5px;
+
 }
 .footerWrapper .footerBoxes .box-footer .info-footer h4{
   font-size: 20px;
@@ -1514,4 +1516,81 @@ font-size: 20px!important;
   left: 20px;
   z-index: 10;
 }
+.cartSection {
+  width: 100%;
+  height: auto;
+  padding: 35px 0px;
+}
+.cartSection .hd{
+  color: #000!important;
+
+}
+.spancart{
+  margin-left: auto;
+  font-weight: 600!important;
+  font-size: 18px;
+}
+
+.spancart svg{
+  font-size: 25px!important;
+}
+.cartWrapper table thead{
+  background: #f1f1f1;
+  overflow: hidden;
+  border-radius: 20px;
+  font-weight: 500!important;
+  font-size: 20px;
+}
+.cartWrapper table thead th:first-child{
+  border-top-left-radius:15px ;
+  border-bottom-left-radius:15px ;
+}
+.cartWrapper table thead th:last-child{
+  border-top-right-radius:15px ;
+  border-bottom-right-radius:15px ;
+}
+.imgcart{
+  width: 150px;
+  padding: 5px;
+  border: 1px solid rgb(0, 0,0,0.1);
+  border-radius: 5px;
+}
+.info-cart{
+  padding-left: 4px;
+}
+.cartWrapper table tbody td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+.cartWrapper table tbody td .info-cart a{
+  color: rgb(0, 0,0,0.7);
+}
+.cartWrapper table tbody td .info-cart a:hover{
+  text-decoration: none;
+}
+.cartWrapper table tbody td span{
+  font-weight: 600;
+  font-size: 20px;
+}
+.checkout{
+  padding-left: 180px!important;
+}
+.checkout .card{
+  padding: 4px;
+}
+.checkout .card h3{
+  margin-left: auto;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.checkout .card h5{
+  margin-bottom: 0px;
+}
+
+
+
+
 
