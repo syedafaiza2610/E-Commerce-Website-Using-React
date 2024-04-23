@@ -18,7 +18,7 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 
 
-function Header() {
+function Header(props) {
     const [Categories, setCategories] = useState([
         'Milk & Dairy',
         'Drinks',
@@ -42,7 +42,7 @@ function Header() {
                 if (res !== null) {
                     res.data.map((item, index) => {
                         countryList.push(item.name)
-                        console.log(item.name)
+                        // console.log(item.name)
                     })
 
                 }
@@ -142,7 +142,7 @@ function Header() {
                     </div>
 
                 </div >
-                <Navbar />
+                <Navbar data={props.data} />
             </div>
         </>
     )

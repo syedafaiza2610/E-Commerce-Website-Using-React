@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from '@mui/material/Button';
 import { IoIosArrowDown } from "react-icons/io";
 import { FiGrid } from "react-icons/fi";
@@ -6,7 +6,16 @@ import { Link } from 'react-router-dom';
 import Home from '../Pages/Home';
 import { MdOutlineHeadphones } from "react-icons/md";
 import Mega from '../Assets/basket.jpg'
-function Navbar() {
+import { useState } from 'react';
+
+function Navbar(props) {
+
+    const [navData, setnavData] = useState([]);
+    useEffect(() => {
+        setnavData(props.data)
+    }, []);
+
+
     return (
         <div className='nav d-flex align-items-center'>
             <div className="container-fluid">
@@ -20,25 +29,64 @@ function Navbar() {
                         <nav>
                             <ul className=' list list-inline mb-0'>
                                 <li className='list-inline-item'>
-                                    <Button><Link to="/home">Home</Link></Button>
-                                </li>
+                                    <Button><Link to={"/"}>Home</Link></Button></li>
+                                {
+                                    navData && navData.length !== 0 && navData.map((item, index) => {
+                                        if (!item || !item.cat_name || !Array.isArray(item.items)) {
+                                            return null;
+                                        }
+                                        return (
+                                            <li className='list-inline-item' key={index}>
+                                                <Button>
+                                                    <Link to={`/cat/${item.cat_name.toLowerCase()}`}>{item.cat_name}</Link>
+                                                </Button>
+                                                {
+                                                    item.items.length !== 0 &&
+                                                    <div className="dropdown_menu">
+                                                        <ul>
+                                                            {item.items.map((item_, index_) => {
+                                                                if (!item_ || !item_.cat_name) {
+                                                                    return null;
+                                                                }
+                                                                return (
+                                                                    <li key={index_}>
+                                                                        <Button>
+                                                                            <Link to={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</Link>
+                                                                        </Button>
+                                                                    </li>
+                                                                )
+                                                            })}
+                                                        </ul>
+                                                    </div>
+                                                }
+                                            </li>
+                                        )
+                                    })
+                                }
+
+
+
+
+
+
+
                                 <li className='list-inline-item'>
-                                    <Button><Link to="/about">About</Link></Button>
+                                    <Button><Link to="/product/details">About</Link></Button>
                                 </li>
-                                <li className='list-inline-item'>
+                                {/* <li className='list-inline-item'>
                                     <Button><Link to="/shop">Shop</Link></Button>
                                     <div className="dropdown_menu">
                                         <ul>
                                             <li><Button><Link to="">Shop Grid-Right Sidebar</Link></Button></li>
                                             <li><Button><Link to="">Shop - Wide</Link></Button></li>
                                             <li><Button><Link to="">Wishlist</Link></Button></li>
-                                            <li><Button><Link to="">Cart</Link></Button></li>
+                                            <li><Button><Link to="/cart">Cart</Link></Button></li>
                                             <li><Button><Link to="">Checkout</Link></Button></li>
                                             <li><Button><Link to="">Compare</Link></Button></li>
 
                                         </ul>
                                     </div>
-                                </li>
+                                </li> */}
                                 <li className='list-inline-item'>
                                     <Button><Link to="">Vendors</Link></Button>
                                     <div className="dropdown_menu">
@@ -54,7 +102,34 @@ function Navbar() {
                                     <Button><Link to="">Mega Menu <IoIosArrowDown /></Link></Button>
                                     <div className="dropdown_menu mega_Menu w-100">
                                         <div className="row">
-                                            <div className="col">
+                                            {
+                                              navData && navData.length !== 0 && navData.map((item, index) => {
+                                                if (!item || !item.cat_name || !Array.isArray(item.items)) {
+                                                    return null;
+                                                }
+                                                    return (
+                                                        <div className='col'>
+                                                            <a href={`/cat/${item.cat_name.toLowerCase()}`}> <h4 className='text-p text-capitalize'>{item.cat_name}</h4></a>
+                                                            {
+                                                                item.items.length !== 0 &&
+                                                                <ul className='mt-4 mb-0'>
+                                                                    {
+                                                                        item.items.map((item_, index_) => {
+                                                                            // console.log(item_)
+                                                                            return (
+                                                                                <li>
+                                                                                    <Link to={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</Link>
+                                                                                </li>
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                </ul>
+                                                            }
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                            {/* <div className="col">
                                                 <h4 className='text-p'>Fruits & Vegetables</h4>
                                                 <ul className="mt-3 mb-0">
 
@@ -71,7 +146,7 @@ function Navbar() {
 
                                             <div className="col">
                                                 <h4 className='text-p'>Breakfast & Dairy</h4>
-                                                <ul  className="mt-3 mb-0">
+                                                <ul className="mt-3 mb-0">
 
                                                     <li><Link>Milk & Flavoured Milk</Link></li>
                                                     <li><Link>Butter and Margarine</Link></li>
@@ -85,7 +160,7 @@ function Navbar() {
                                             <div className="col">
                                                 <h4 className='text-p'>Meat & Seafood</h4>
 
-                                                <ul  className="mt-3 mb-0">
+                                                <ul className="mt-3 mb-0">
 
                                                     <li><Link>Breakfast Sausage</Link></li>
                                                     <li><Link>Dinner Sausage</Link></li>
@@ -95,7 +170,7 @@ function Navbar() {
                                                     <li><Link>Crab and Shellfish</Link></li>
 
                                                 </ul>
-                                            </div>
+                                            </div> */}
                                             <div className="col">
                                                 <img src={Mega} alt="" />
                                             </div>
@@ -107,7 +182,7 @@ function Navbar() {
                                     <Button><Link to="">Pages <IoIosArrowDown /></Link></Button>
                                     <div className="dropdown_menu">
                                         <ul>
-                                            <li><Button><Link to="/about">About us</Link></Button></li>
+                                            <li><Button><Link to="/product/details">About us</Link></Button></li>
                                             <li><Button><Link to="/listing">Products</Link></Button></li>
                                             <li><Button><Link to="/contact">Contact</Link></Button></li>
                                             <li><Button><Link to="/about">My Account</Link></Button></li>
@@ -123,9 +198,9 @@ function Navbar() {
                                         </ul>
                                     </div>
                                 </li>
-                                <li className='list-inline-item'>
+                                {/* <li className='list-inline-item'>
                                     <Button><Link to="/contact">Contact</Link></Button>
-                                </li>
+                                </li> */}
 
                             </ul>
 
