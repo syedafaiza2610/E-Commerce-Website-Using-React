@@ -12,6 +12,7 @@ import TopProducts from './TopProducts';
 import Newsletter from '../Components/Newsletter';
 import NewsletterPic from '../Assets/news3.png'
 import { Link } from 'react-router-dom';
+import Footer from '../Components/Footer';
 
 
 
@@ -27,7 +28,6 @@ function HomeSlider() {
   };
   return (
     <>
-      <Header />
       <SliderHome/>
 
       <Category /> 
@@ -197,7 +197,7 @@ function HomeSlider() {
       </section>
       <br></br>
 
-
+           
 
     </>
   )

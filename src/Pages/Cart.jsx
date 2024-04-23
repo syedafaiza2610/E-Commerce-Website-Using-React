@@ -11,7 +11,6 @@ const Cart = () => {
    
     return (
         <>
-        <Header/>
             <div className="breadcrumbWrapper mb-4">
                 <div className="container-fluid">
                     <ul className="breadcrumb">

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Header from '../Components/Header';
 const ErrorPage = () => (
   <>
-  <Header/>
+ 
   <Result
     status="404"
     title="404"

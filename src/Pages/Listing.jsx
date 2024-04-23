@@ -13,7 +13,7 @@ function Listing() {
     const [isopendropdown2, setisopendropdown2] = useState(false)
     return (
         <>
-            <Header />
+           
 
             <div className="listingPage">
                 <div className="container-fluid">

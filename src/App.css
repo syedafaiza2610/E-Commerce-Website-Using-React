@@ -315,7 +315,10 @@ span .badge{
 .nav nav ul li button{
   text-transform: capitalize;
   padding: 21px 18px;
+  margin-left: -10px;
   color:rgb(0, 0,0,0.9) !important;
+  font-size: 19px;
+
 
 }
 .nav nav ul li button:hover{
@@ -415,7 +418,7 @@ span .badge{
   height: 40px!important;
   border-radius: 50%!important;
   background: #9365c9!important;
-  z-index: 1000!important;
+  z-index: 10!important;
 
 }
 .slick-arrow.slick-next{
