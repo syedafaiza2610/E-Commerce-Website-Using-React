@@ -13,6 +13,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
 import Sidebar from '../Components/Sidebar';
 import Products from '../Components/Products'
+import Quantitybox from '../Components/Quantitybox';
 
 function DetailsPage() {
 
@@ -162,13 +163,11 @@ function DetailsPage() {
 
                     </ul>
                   </div>
+                 <div className="d-flex align-items-center ml-3">
+                  <div><Quantitybox /></div>
+                  
                   <div className="addCartSection pt-4 pb-4 d-flex align-items-center">
-                    <div className="counterSection mr-3">
-                      <input type="number" value={inputValue} />
-                      <span className='plus'><KeyboardArrowUpOutlinedIcon onClick={plus} /></span>
-                      <span className='minus'><KeyboardArrowDownOutlinedIcon onClick={minus} /></span>
 
-                    </div>
                     <Button className='btnfilter btn-lg btncart'> <ShoppingCartOutlinedIcon /> Add to Cart</Button>
                     <Button className=' btncart ml-3 btn-border'> <FavoriteBorderOutlinedIcon /></Button>
                     <Button className=' btncart ml-3 btn-border'> <CompareArrowsOutlinedIcon /></Button>
@@ -176,6 +175,8 @@ function DetailsPage() {
 
 
                   </div>
+
+                 </div>
 
 
 
@@ -439,35 +440,35 @@ function DetailsPage() {
 
             </div>
           </div>
-          <br/>
+          <br />
 
           <div className="relatedProducts pt-5 pb-4">
             <h2 className='hd mb-0 mt-0'>Related Products</h2>
-            <br/>
-          <Slider {...related} className='prodSlider'>
+            <br />
+            <Slider {...related} className='prodSlider'>
               <div className="item">
-              <Products tag="new"/>
+                <Products tag="new" />
               </div>
               <div className="item">
-              <Products tag="best"/>
+                <Products tag="best" />
               </div>
               <div className="item">
-              <Products tag="new"/>
+                <Products tag="new" />
               </div>
               <div className="item">
-              <Products tag="beauty"/>
+                <Products tag="beauty" />
               </div>
               <div className="item">
-              <Products tag="new"/>
+                <Products tag="new" />
               </div>
               <div className="item">
-              <Products tag="sale"/>
+                <Products tag="sale" />
               </div>
               <div className="item">
-              <Products tag="new"/>
+                <Products tag="new" />
               </div>
-           
-          </Slider>
+
+            </Slider>
 
           </div>
         </div>
