@@ -405,6 +405,7 @@ span .badge{
 }
 .home-slider{
   padding: 30px 0px;
+  margin-bottom: 0px;
 }
 .home-slider-main{
   border-radius: 25px;
@@ -578,19 +579,21 @@ padding: 25px 0px;
 }
 .popular{
   margin-left: auto;
+  /* border: 1px solid red; */
 }
 .popular li{
   margin-left: 20px;
 }
 .popular li a{
+  /* text-align: center; */
   color: #000;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
   transition: all 0.3s ease-in-out;
   font-weight: 500;
   position: relative;
 }
-.popular li a:hover{
+.popular li:hover a , .popular li a.act{
   color: #EC7676;
   transform: translateY(-10px);
 }
@@ -634,8 +637,13 @@ padding: 25px 0px;
   width: 100%;
   overflow: hidden;
 }
+.wrapper{
+  height: 350px;
+  overflow: hidden;
+}
 .productThumb .imgWrapper img{
   transition: all 0.3s ease-in-out;
+
 }
 .productThumb:hover .imgWrapper img{
   transform: scale(1.1);
@@ -650,7 +658,7 @@ padding: 25px 0px;
   color: #000;
   font-size: 20px;
   font-weight: 500;
-  margin: 10px 0px;
+  margin: 15px 0px;
   line-height: 25px;
 
 }
@@ -736,6 +744,7 @@ padding: 25px 0px;
 }
 .badge1.beauty{
   background: rgb(226, 226, 14)!important;
+
 }
 
 .badge1.sale{
@@ -751,10 +760,12 @@ padding: 25px 0px;
 .homeProductsRow2 .prodSlider .item{
   padding-right:20px!important;
   padding: 10px 5px!important;
+  /* height: 600px!important; */
 
 }
 .homeProducts .shamp img{
-  height: 450px!important;
+  height: 500px!important;
+  width: 100%!important;
 }
 .listingPage{
   width: 100%;

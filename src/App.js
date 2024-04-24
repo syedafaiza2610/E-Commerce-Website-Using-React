@@ -46,7 +46,7 @@ function App() {
       <BrowserRouter>
       <Header data={productData}/>
       <Routes>
-        <Route path='/' element={<HomeSlider/>}/>
+        <Route path='/' element={<HomeSlider data={productData}/>}/>
         <Route path='/home' element={<HomeSlider/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/listing' element={<Listing/>}/>

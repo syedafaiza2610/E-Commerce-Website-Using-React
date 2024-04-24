@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Slider2 from "../Assets/slider2.png"
 import Slider3 from "../Assets/slider3.jpg"
 import Slider4 from "../Assets/slider4.jpeg"
+import Slider1 from "../Assets/gro4.jpg"
 import Slider5 from "../Assets/slider5.jpg"
 import Slider6 from "../Assets/slider6.jpeg"
 
@@ -23,6 +24,9 @@ import Slider6 from "../Assets/slider6.jpeg"
         <div className='item'>
           <img src={Slider4} alt="" className='w-100' />
         </div>
+        {/* <div className='item'>
+          <img src={Slider1} alt="" className='w-100' />
+        </div> */}
         <div className='item'>
           <img src={Slider3} alt="" className='w-100' />
         </div>
