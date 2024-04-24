@@ -578,14 +578,16 @@ padding: 25px 0px;
 }
 .popular{
   margin-left: auto;
+  /* border: 1px solid red; */
 }
 .popular li{
   margin-left: 20px;
 }
 .popular li a{
+  /* text-align: center; */
   color: #000;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
   transition: all 0.3s ease-in-out;
   font-weight: 500;
   position: relative;

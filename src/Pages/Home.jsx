@@ -70,7 +70,7 @@ function HomeSlider(props) {
             <ul className=' popular list list-inline ml-auto mb-0'> 
             {
                 
-                                catArray.length !== 0 &&
+                                // catArray.length !== 0 &&
                                 catArray.map((item, index) => {
                                     return (
                                         <li className="list list-inline-item">
@@ -89,21 +89,7 @@ function HomeSlider(props) {
                                     )
                                 })
                             }
-            {/* <li className='list-inline-item'>
-              <a className='cursor'>All</a>
-            </li>
-            <li className='list-inline-item'>
-              <a className='cursor'>Milk & Dairy</a>
-            </li>
-            <li className='list-inline-item'>
-              <a className='cursor'>Clothes</a>
-            </li>
-            <li className='list-inline-item'>
-              <a className='cursor'>Skin Care</a>
-            </li>
-            <li className='list-inline-item'>
-              <a className='cursor'>Beauty</a>
-            </li> */}
+           
 
             </ul>
           </div>
