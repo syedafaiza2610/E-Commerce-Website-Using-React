@@ -103,10 +103,10 @@ function Navbar(props) {
                                     <div className="dropdown_menu mega_Menu w-100">
                                         <div className="row">
                                             {
-                                              navData && navData.length !== 0 && navData.map((item, index) => {
-                                                if (!item || !item.cat_name || !Array.isArray(item.items)) {
-                                                    return null;
-                                                }
+                                                navData && navData.length !== 0 && navData.map((item, index) => {
+                                                    if (!item || !item.cat_name || !Array.isArray(item.items)) {
+                                                        return null;
+                                                    }
                                                     return (
                                                         <div className='col'>
                                                             <a href={`/cat/${item.cat_name.toLowerCase()}`}> <h4 className='text-p text-capitalize'>{item.cat_name}</h4></a>

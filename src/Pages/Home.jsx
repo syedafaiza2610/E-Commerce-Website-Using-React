@@ -12,11 +12,41 @@ import TopProducts from './TopProducts';
 import Newsletter from '../Components/Newsletter';
 import NewsletterPic from '../Assets/news3.png'
 import { Link } from 'react-router-dom';
-import Footer from '../Components/Footer';
+import { useState , useEffect } from 'react';
 
 
 
-function HomeSlider() {
+
+function HomeSlider(props) {
+  const [productData, setproductData] = useState(props.data)
+  const [catArray, setcatArray] = useState([])
+  const [activeTab, setactiveTab] = useState();
+  const [activeTabIndex, setactiveTabIndex] = useState(0);
+  const [activeTabData, setActiveTabData] = useState([]);
+
+  const catArr = [];
+
+  useEffect(() => {
+    if (productData && productData.length !== 0) {
+        const catArr = [];
+        productData.forEach(item => {
+            if (item.items && item.items.length !== 0) {
+                item.items.forEach(item_ => {
+                    if (item_.cat_name) {
+                        catArr.push(item_.cat_name);
+                    }
+                });
+            }
+        });
+        console.log(catArr)
+        const list2 = catArr.filter((item, index) => catArr.indexOf(item) === index);
+        setcatArray(list2);
+        setactiveTab(list2[0]);
+    }
+   
+}, [props.data]);
+
+  
   var settings = {
     dots: false,
     infinite: true,
@@ -38,7 +68,28 @@ function HomeSlider() {
           <div className="d-flex align-items-center">
             <h2 className='hd mb-0 mt-0'>Popular Products</h2>
             <ul className=' popular list list-inline ml-auto mb-0'> 
-            <li className='list-inline-item'>
+            {
+                
+                                catArray.length !== 0 &&
+                                catArray.map((item, index) => {
+                                    return (
+                                        <li className="list list-inline-item">
+                                            <a className={`cursor text-capitalize 
+                                                ${activeTabIndex === index ? 'act' : ''}`}
+                                                onClick={() => {
+                                                    setactiveTab(item)
+                                                    setactiveTabIndex(index);
+                                                    // productRow.current.scrollLeft=0;
+                                                    // setIsLoadingProducts(true);
+                                                }}
+                                            >
+                                                {item}
+                                            </a>
+                                        </li>
+                                    )
+                                })
+                            }
+            {/* <li className='list-inline-item'>
               <a className='cursor'>All</a>
             </li>
             <li className='list-inline-item'>
@@ -52,7 +103,7 @@ function HomeSlider() {
             </li>
             <li className='list-inline-item'>
               <a className='cursor'>Beauty</a>
-            </li>
+            </li> */}
 
             </ul>
           </div>
