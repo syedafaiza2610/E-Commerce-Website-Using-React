@@ -1,15 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import Cat1 from "../Assets/cloth.webp"
-import Cat2 from "../Assets/beauty.jpg"
-import Cat3 from "../Assets/foot.jpg"
-import Cat4 from "../Assets/pets.jpg"
-import Cat5 from "../Assets/baking2.webp"
-import Cat6 from "../Assets/bags.webp"
-import Cat7 from "../Assets/abayas.jpg"
-import Cat8 from "../Assets/jwellery.jpg"
-import Cat9 from "../Assets/hijab.jpg"
-import Cat10 from "../Assets/food.jpg"
+
 
 
 function Category(props) {
@@ -25,22 +17,26 @@ function Category(props) {
     // centerMode: true,
     autoplay: 2000
   };
-  const [itemBg, setItemBg] = useState([
-    '#fffceb',
-    '#ecffec',
-    '#feefea',
-    '#fff3eb',
-    '#feefea',
-    '#ecffec',
-    '#feefea',
-    '#fff3eb',
-    '#fff3ff',
-    '#f2fce4',
-    '#feefea',
-    '#fffceb',
-    '#feefea',
-    '#ecffec'
-]);
+  const [totalLength, setTotalLength] = useState([]);
+  var catLength = 0;
+  var lengthArray = [];
+  useEffect(() => {
+    alldata.length !== 0 &&
+      alldata.map((item, index) => {
+        item.items.length !== 0 &&
+          item.items.map((item_) => {
+            catLength += item_.products.length
+          })
+        lengthArray.push(catLength)
+        catLength = 0;
+      })
+
+    const list = lengthArray.filter((item, index) => lengthArray.indexOf(item) === index);
+    setTotalLength(list)
+
+
+  }, []);
+
   return (
     <>
       <div className="CategorySliderSection">
@@ -51,26 +47,33 @@ function Category(props) {
               alldata && Array.isArray(alldata) && alldata.length !== 0 &&
               alldata.map((item, index) => {
                 console.log(item.cat_name)
-                return(
-                <div className="item" key={index}>
-                  <div className="info" style={{ background: itemBg[index] }}>
-                    <img className='cat1' src={item.image} alt="" />
-                    <h5>{item.cat_name}</h5>
-                    <p>{item.items?.products?.length}</p>
+                return (
+                  <div className="item" key={index}>
+                    <Link to={`/cat/${item.cat_name.toLowerCase()}`}>
+                      <div className="info">
+                        <img className='cat1' src={item.image} alt="" />
+                        <h5>{item.cat_name}</h5>
+                        <h6>{totalLength[index]} items</h6>
+
+                      </div>
+                    </Link>
+
+
                   </div>
-                </div>
+
                 )
-              
               })
             }
 
-        
+
+
+
 
           </Slider>
 
-        </div>
+        </div >
 
-      </div>
+      </div >
     </>
   )
 }
