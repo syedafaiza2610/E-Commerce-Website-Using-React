@@ -498,15 +498,17 @@ h2{
 }
 .cat-slider-main .slick-slide {
  padding-right: 20px!important;
+ justify-content: center!important;
 
 }
 .cat-slider-main .item{
   height:auto;
-  background-color:#e8dff3;
-  border-radius: 10px;
+  /* background-color:#e8dff3; */
+  border-radius: 40px;
   display: flex;
   cursor: pointer;
   padding: 15px 0px;
+
 
 }
 

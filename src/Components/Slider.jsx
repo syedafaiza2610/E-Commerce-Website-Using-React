@@ -15,7 +15,8 @@ import Slider6 from "../Assets/slider6.jpeg"
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
-        arrows: true
+        arrows: true,
+        autoplay: 5
       };
   return (
     <section className='home-slider'>
