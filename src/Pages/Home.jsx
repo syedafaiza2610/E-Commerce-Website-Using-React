@@ -100,7 +100,7 @@ function HomeSlider(props) {
     <>
       <SliderHome />
 
-      <Category />
+      <Category data={productData} />
       <Banner />
 
       <section className='homeProducts'>
@@ -138,10 +138,10 @@ function HomeSlider(props) {
         <div className="productRow">
           {
             activeTabData.length !== 0 && 
-            activeTabData.map((item_, index) => { 
+            activeTabData.map((item, index) => { 
               return (
                 <div className='item' key={index}> 
-                  <Products tag={item_.type} item={item_} /> 
+                  <Products tag="sale" item={item} /> 
                 </div>
               );
             })
@@ -175,7 +175,7 @@ function HomeSlider(props) {
                     bestSells.map((item, index) => {
                         return (
                             <div className='item' key={index} style={{minHeight:"600px"}}>
-                                <Products tag="bueaty" item={item} />
+                                <Products tag="beauty" item={item} />
                             </div>
                         )
                     })

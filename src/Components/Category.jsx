@@ -1,113 +1,81 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import Cat1 from "../Assets/cloth.webp"
-import Cat2 from "../Assets/beauty.jpg"
-import Cat3 from "../Assets/foot.jpg"
-import Cat4 from "../Assets/pets.jpg"
-import Cat5 from "../Assets/baking2.webp"
-import Cat6 from "../Assets/bags.webp"
-import Cat7 from "../Assets/abayas.jpg"
-import Cat8 from "../Assets/jwellery.jpg"
-import Cat9 from "../Assets/hijab.jpg"
-import Cat10 from "../Assets/food.jpg"
 
 
-function Category() {
-    var settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 8,
-        slidesToScroll: 1,
-        fade: false,
-        arrows: true,
-        centerMode:true,
-        autoplay:2000
-    };
-    return (
-        <>
-            <div className="CategorySliderSection">
-                <div className="container-fluid">
-                    <h2 className='hd'>Featured Categories</h2>
-                    <Slider {...settings} className='cat-slider-main'>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat1} alt="" />
-                                <h5>Clothing</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat2} alt="" />
-                                <h5>Beauty</h5>
-                                <p>90+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat3} alt="" />
-                                <h5>Foot Wear</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat4} alt="" />
-                                <h5>Pets</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat5} alt="" />
-                                <h5>Baking</h5>
-                                <p>10+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat6} alt="" />
-                                <h5>Bags</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat7} alt="" />
-                                <h5>Abayas</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat8} alt="" />
-                                <h5>Jwellery</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat9} alt="" />
-                                <h5>Hijabs</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                        <div className="item">
-                              <div className="info">
-                                <img className='cat1' src={Cat10} alt="" />
-                                <h5>Food</h5>
-                                <p>100+ Items</p>
-                              </div>
-                        </div>
-                      
-                    </Slider>
 
-                </div>
+function Category(props) {
+  const [alldata, setalldata] = useState(props.data)
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    fade: false,
+    arrows: true,
+    // centerMode: true,
+    autoplay: 2000
+  };
+  const [totalLength, setTotalLength] = useState([]);
+  var catLength = 0;
+  var lengthArray = [];
+  useEffect(() => {
+    alldata.length !== 0 &&
+      alldata.map((item, index) => {
+        item.items.length !== 0 &&
+          item.items.map((item_) => {
+            catLength += item_.products.length
+          })
+        lengthArray.push(catLength)
+        catLength = 0;
+      })
 
-            </div>
-        </>
-    )
+    const list = lengthArray.filter((item, index) => lengthArray.indexOf(item) === index);
+    setTotalLength(list)
+
+
+  }, []);
+
+  return (
+    <>
+      <div className="CategorySliderSection">
+        <div className="container-fluid">
+          <h2 className='hd'>Featured Categories</h2>
+          <Slider {...settings} className='cat-slider-main'>
+            {
+              alldata && Array.isArray(alldata) && alldata.length !== 0 &&
+              alldata.map((item, index) => {
+                console.log(item.cat_name)
+                return (
+                  <div className="item" key={index}>
+                    <Link to={`/cat/${item.cat_name.toLowerCase()}`}>
+                      <div className="info">
+                        <img className='cat1' src={item.image} alt="" />
+                        <h5>{item.cat_name}</h5>
+                        <h6>{totalLength[index]} items</h6>
+
+                      </div>
+                    </Link>
+
+
+                  </div>
+
+                )
+              })
+            }
+
+
+
+
+
+          </Slider>
+
+        </div >
+
+      </div >
+    </>
+  )
 }
 
 export default Category
