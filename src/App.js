@@ -49,13 +49,13 @@ function App() {
         <Route path='/' element={<HomeSlider data={productData}/>}/>
         <Route path='/home' element={<HomeSlider/>}/>
         <Route path='/cart' element={<Cart/>}/>
-        <Route path='/listing' element={<Listing/>}/>
+        {/* <Route path='/cat/:id/:id' element={<Listing/>}/> */}
         <Route path='/product/details' element={<DetailsPage/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/cat/:id' element={<Listing data={productData}/>}single={true}/>
-        <Route path='/cat/:id/:id' element={<Listing data={productData}/>} single={false}/>
+        <Route path='/cat/:id' element={<Listing data={productData} single={true}/>}/>
+        <Route path='/cat/:id/:id' element={<Listing data={productData} single={false}/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='*' element={<ErrorPage/>}/>
         

@@ -617,13 +617,14 @@ padding: 25px 0px;
   margin: 0px -15px;
   flex-wrap: wrap;
 
-
-
 }
 .homeProducts .productRow .item{
-  width: 20%;
-  padding: 15px 15px;
+  width: 25%!important;
+  padding: 10px 15px;
 
+}
+.productwrapper .productRow .item{
+  width: 20%;
 }
 .productThumb{
   width: 100%;
@@ -651,7 +652,7 @@ padding: 25px 0px;
   overflow: hidden;
 }
 .wrapper{
-  height: 350px;
+  height: 250px;
   overflow: hidden;
 }
 .productThumb .imgWrapper img{
@@ -688,6 +689,7 @@ padding: 25px 0px;
   opacity: 0.6;
   font-size: 17px;
   text-decoration: line-through;
+  margin-left: auto;
 }
 .addbtn{
   margin-left: 6px!important;
@@ -862,7 +864,7 @@ margin-top: 40px;
 }
  .card .catlist .catitem h4{
   color: #000;
-  font-size: 14px;
+  font-size: 17px;
 }
 .word{
   margin-left: 10px!important;
@@ -876,6 +878,7 @@ margin-top: 40px;
   height: 25px;
   width: 25px;
   justify-content: center;
+  margin-left: auto;
 }
 .right-content{
   max-width: 80%!important;
@@ -1020,6 +1023,7 @@ ul.breadcrumb li a:hover {
 .oldPrice{
   font-size: 30px;
   font-weight: 600;
+  margin-left: auto!important;
 }
 .productInfo h1{
   font-size: 55px;

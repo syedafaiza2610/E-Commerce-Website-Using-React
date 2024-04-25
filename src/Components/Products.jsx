@@ -27,7 +27,7 @@ function Products(props) {
         <>
           <Link>
             <div className="imgWrapper">
-              <div className='p-4 wrapper'>
+              <div className='wrapper'>
                 <img className='w-100' src={productData.catImg + '?im-Resize=(420,420)'} alt="" />
               </div>
               <div className="overlay1 transition">
@@ -68,14 +68,15 @@ function Products(props) {
             <h4 className='title'><Link>{productData.productName.substr(0,70)+'...'}</Link> </h4>
             <Rating name="half-rating-read" defaultValue={parseFloat(productData.rating)} precision={0.5} readOnly />
             <span className='brand d-block'>By <Link className='clr'>{productData.brand}</Link></span>
-            <div className="d-flex align-items-center ">
-              <div className="d-flex align-items-center">
-                <span className='price'>Rs: {productData.price}</span> <span className='oldprice'>{productData.oldPrice}</span>
+            <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center w-100">
+                <span className='price'>Rs: {productData.price}</span> <span className='oldprice ml-auto'>{productData.oldPrice}</span>
 
               </div>
-              <Button className='addbtn transition'><ShoppingCartOutlinedIcon /> Add</Button>
-
             </div>
+            
+            <Button className='addbtn transition w-100 mt-3'><ShoppingCartOutlinedIcon /> Add</Button>
+
           </div>
         </>
       }

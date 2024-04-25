@@ -9,8 +9,29 @@ import Checkbox from '@mui/material/Checkbox';
 import { Button } from '@mui/material'
 import Banner2 from "../Assets/beautyslider.jpg"
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
+import { Link } from 'react-router-dom'
+import { useState , useEffect } from 'react'
 
-function Sidebar() {
+function Sidebar( props ) {
+    const [totalLength, setTotalLength] = useState([]);
+    var catLength = 0;
+    var lengthArr = [];
+    useEffect(() => {
+        props.data.length !== 0 &&
+        props.data.map((item, index) => {
+                item.items.length !== 0 &&
+                    item.items.map((item_) => {
+                        catLength += item_.products.length
+                    })
+                lengthArr.push(catLength)
+                catLength = 0;
+            })
+
+        const list = lengthArr.filter((item, index) => lengthArr.indexOf(item) === index);
+        setTotalLength(list)
+
+
+    }, []);
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     function valuetext(value) {
@@ -28,50 +49,25 @@ function Sidebar() {
                 <div className="card border-0 shadow">
                     <h3>Category</h3>
                     <div className="catlist">
-                        <div className="catitem d-flex align-items-center">
-                            <span className='img'>
-                                <img src={Milk} width={30} /></span>
-                            <h4 className='word mb-0 ml-3'>  Milk & Dairy</h4>
-                            <span className=' num d-flex align-items-center rounded-circle ml-auto'>30</span>
+                    {
+                            props.data.length !== 0 && props.data.map((item, index) => {
+                                return (
+                                    <Link to={`/cat/${item.cat_name.toLowerCase()}`}>
+                                        <div className='catitem d-flex align-items-center'>
+                                            <span className='img'><img src={item.image} width={30} /></span>
+                                            <h4 className='mb-0 ml-3 mr-5 pl-3 text-capitalize'>{item.cat_name}</h4>
+                                            <span className='d-flex align-items-center justify-content-center rounded-circle ml-auto'>
+                                            {totalLength[index]}</span>
+                                        </div>
+                                    </Link>
+                                )
+                            })
 
-                        </div>
-                    </div>
-                    <div className="catlist">
-                        <div className="catitem d-flex align-items-center">
-                            <span className='img'>
-                                <img src={Cloth} width={30} /></span>
-                            <h4 className='word mb-0 ml-3'>Clothing</h4>
-                            <span className=' num d-flex align-items-center rounded-circle ml-auto'>80</span>
+                        }
 
-                        </div>
-                    </div>
-                    <div className="catlist">
-                        <div className="catitem d-flex align-items-center">
-                            <span className='img'>
-                                <img src={Bake} width={30} /></span>
-                            <h4 className='word mb-0 ml-3'>Pet Food</h4>
-                            <span className=' num d-flex align-items-center rounded-circle ml-auto'>10</span>
 
-                        </div>
                     </div>
-                    <div className="catlist">
-                        <div className="catitem d-flex align-items-center">
-                            <span className='img'>
-                                <img src={Pet} width={30} /></span>
-                            <h4 className='word mb-0 ml-3'>Baking Material</h4>
-                            <span className=' num d-flex align-items-center rounded-circle ml-auto'>60</span>
 
-                        </div>
-                    </div>
-                    <div className="catlist">
-                        <div className="catitem d-flex align-items-center">
-                            <span className='img'>
-                                <img src={Fruit} width={30} /></span>
-                            <h4 className='word mb-0 ml-3'>Fresh Fruits</h4>
-                            <span className=' num d-flex align-items-center rounded-circle ml-auto'>40</span>
-
-                        </div>
-                    </div>
                 </div>
                 <div className="card border-0 shadow">
                     <h3>Fill by Price</h3>

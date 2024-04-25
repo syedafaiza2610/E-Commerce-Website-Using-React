@@ -37,8 +37,8 @@ function Navbar(props) {
                                         }
                                         return (
                                             <li className='list-inline-item' key={index}>
-                                                <Button>
-                                                    <Link to={`/cat/${item.cat_name.toLowerCase()}`}>{item.cat_name}</Link>
+                                                <Button onClick={() => sessionStorage.setItem('cat', item.cat_name.toLowerCase())}>
+                                                    <a href={`/cat/${item.cat_name.toLowerCase()}`}>{item.cat_name}</a>
                                                 </Button>
                                                 {
                                                     item.items.length !== 0 &&
@@ -51,7 +51,7 @@ function Navbar(props) {
                                                                 return (
                                                                     <li key={index_}>
                                                                         <Button>
-                                                                            <Link to={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</Link>
+                                                                            <a href={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</a>
                                                                         </Button>
                                                                     </li>
                                                                 )

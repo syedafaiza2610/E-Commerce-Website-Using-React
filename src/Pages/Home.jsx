@@ -103,7 +103,7 @@ function HomeSlider(props) {
       <Category data={productData} />
       <Banner />
 
-      <section className='homeProducts'>
+      <section className='homeProducts productwrapper'>
         <div className="container-fluid">
           <div className="d-flex align-items-center">
             <h2 className='hd mb-0 mt-0'>Popular Products</h2>
