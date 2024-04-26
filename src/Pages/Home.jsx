@@ -17,6 +17,7 @@ import { useState, useEffect } from 'react';
 
 
 
+
 function HomeSlider(props) {
   const [productData, setproductData] = useState(props.data)
   const [catArray, setcatArray] = useState([])

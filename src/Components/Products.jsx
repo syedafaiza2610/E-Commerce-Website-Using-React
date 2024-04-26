@@ -8,8 +8,18 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import Tooltip from '@mui/material/Tooltip';
+import { MyContext } from '../App';
+import { useContext } from 'react';
+
 
 function Products(props) {
+  const context  = useContext(MyContext);
+  const addToCart=(item) =>{
+    context.addToCart(item);
+    
+  }
+ 
+ 
   // console.log(props.tag)
 
   const [productData, setproductData] = useState();
@@ -17,6 +27,8 @@ function Products(props) {
     window.scroll(0,0);
     setproductData(props.item)
   }, [props.item]);
+
+ 
   return (
     <div className='productThumb'>
       {
@@ -76,7 +88,7 @@ function Products(props) {
               </div>
             </div>
             
-            <Button className='addbtn transition w-100 mt-3'><ShoppingCartOutlinedIcon /> Add</Button>
+            <Button className='addbtn transition w-100 mt-3'onClick={() => addToCart(productData)}><ShoppingCartOutlinedIcon /> Add</Button>
 
           </div>
         </>

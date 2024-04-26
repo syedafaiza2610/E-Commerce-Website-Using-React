@@ -14,19 +14,23 @@ import Listing from './Pages/Listing';
 import DetailsPage from './Pages/Details';
 import Cart from './Pages/Cart';
 import Newsletter from './Components/Newsletter';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 
 
 
-
+const MyContext = createContext();
 function App() {
+
   const [productData, setproductData] = useState([])
   useEffect(() => {
-    getData('http://localhost:3000/productData')
+    getData('http://localhost:8000/productData')
 
   }, [])
+  const [cartItems, setCartItems] = useState([])
+ 
+
   const getData = async (url) => {
     try {
       await axios.get(url).then((response) => {
@@ -40,11 +44,30 @@ function App() {
     }
 
   }
+  const addToCart = async (item) => {
+    item.quantity = 1;
+
+    try {
+      await axios.post("http://localhost:8000/cartItems", item).then((res) => {
+        if (res !== undefined) {
+          setCartItems([...cartItems, { ...item, quantity: 1 }])
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  const value = {
+    cartItems,
+    addToCart}
   return (
   
      productData.length !== 0 &&
+
       <BrowserRouter>
-      <Header data={productData}/>
+      <MyContext.Provider value={value}>
+      <Header data={productData} cartItemsCount ={cartItems.length}/>
       <Routes>
         <Route path='/' element={<HomeSlider data={productData}/>}/>
         <Route path='/home' element={<HomeSlider/>}/>
@@ -61,6 +84,7 @@ function App() {
         
       </Routes>
       <Footer/>
+      </MyContext.Provider>
       </BrowserRouter>
     
       
@@ -74,3 +98,4 @@ function App() {
 }
 
 export default App;
+export {MyContext}

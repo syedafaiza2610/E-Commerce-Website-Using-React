@@ -1,7 +1,7 @@
-import React, { useRef, useState , useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Header from '../Components/Header'
 import Rating from '@mui/material/Rating';
-import { Link , useParams} from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import Slider from "react-slick";
@@ -15,8 +15,9 @@ import Sidebar from '../Components/Sidebar';
 import Products from '../Components/Products'
 import Quantitybox from '../Components/Quantitybox';
 
-function DetailsPage( props ) {
+function DetailsPage(props) {
   const [currentProduct, setCurrentProduct] = useState({})
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
   var related = {
     dots: false,
@@ -47,7 +48,7 @@ function DetailsPage( props ) {
     slidesToScroll: 1,
     fade: false,
     arrows: false,
-};
+  };
   var settings = {
     dots: false,
     infinite: false,
@@ -57,12 +58,12 @@ function DetailsPage( props ) {
     fade: false,
     arrows: true
   };
- 
+
   const goto = (index) => {
 
     zoomSlider.current.slickGoTo(index);
     zoomSliderBig.current.slickGoTo(index);
-}
+  }
   const isActive = (index) => {
     setactiveSize(index)
   }
@@ -74,23 +75,57 @@ function DetailsPage( props ) {
   const [activeTabs, setactiveTabs] = useState(0)
 
   let { id } = useParams();
+    const [prodCat, setProdCat] = useState({
+        parentCat: sessionStorage.getItem('parentCat'),
+        subCatName: sessionStorage.getItem('subCatName')
+    })
 
   useEffect(() => {
     window.scrollTo(0, 0)
 
     props.data.length !== 0 &&
-        props.data.map((item) => {
-            item.items.length !== 0 &&
-                item.items.map((item_) => {
-                    item_.products.length !== 0 &&
-                        item_.products.map((product) => {
-                            if (parseInt(product.id) === parseInt(id)) {
-                                setCurrentProduct(product);
-                            }
-                        })
-                })
-        })
- },[id] )
+      props.data.map((item) => {
+        item.items.length !== 0 &&
+          item.items.map((item_) => {
+            item_.products.length !== 0 &&
+              item_.products.map((product) => {
+                if (parseInt(product.id) === parseInt(id)) {
+                  setCurrentProduct(product);
+                }
+              })
+          })
+      })
+
+    const related_products = [];
+
+    props.data.length !== 0 &&
+      props.data.map((item) => {
+        if (prodCat.parentCat === item.cat_name) {
+          item.items.length !== 0 &&
+            item.items.map((item_) => {
+              if (prodCat.subCatName === item_.cat_name) {
+                item_.products.length !== 0 &&
+                  item_.products.map((product, index) => {
+                    if (product.id !== parseInt(id)) {
+                      related_products.push(product)
+                    }
+
+                  })
+              }
+            })
+        }
+
+      })
+
+
+    if (related_products.length !== 0) {
+      setRelatedProducts(related_products)
+    }
+
+
+
+
+  }, [id]);
 
   return (
     <>
@@ -112,48 +147,48 @@ function DetailsPage( props ) {
           <div className="row">
             <div className="col-md-11 part1">
               <div className="row">
-              <div className='col-md-5'>
-                            <div className='productZoom'>
-                                <Slider {...settings2} className='zoomSliderBig' ref={zoomSliderBig}>
-                                    {
-                                        currentProduct.productImages !== undefined &&
-                                        currentProduct.productImages.map((imgUrl, index) => {
-                                            return (
-                                              // console.log(imgUrl)
-                                                <div className='item'>
-                                                    <InnerImageZoom
-                                                        zoomType="hover" zoomScale={1}
-                                                        key={index}
-                                                        src={`${imgUrl}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`} />
+                <div className='col-md-5'>
+                  <div className='productZoom'>
+                    <Slider {...settings2} className='zoomSliderBig' ref={zoomSliderBig}>
+                      {
+                        currentProduct.productImages !== undefined &&
+                        currentProduct.productImages.map((imgUrl, index) => {
+                          return (
+                            // console.log(imgUrl)
+                            <div className='item'>
+                              <InnerImageZoom
+                                zoomType="hover" zoomScale={1}
+                                key={index}
+                                src={`${imgUrl}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`} />
 
-                                                </div>
-                                            )
-                                            
-                                        })
-                                    }
-
-                                </Slider>
                             </div>
+                          )
+
+                        })
+                      }
+
+                    </Slider>
+                  </div>
 
 
-                            <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
+                  <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
 
-                            {
-                                    currentProduct.productImages !== undefined &&
-                                    currentProduct.productImages.map((imgUrl, index) => {
-                                        return (
-                                            <div className='item'>
-                                                <img src={`${imgUrl}?im=Resize=(${smallImageSize[0]},${smallImageSize[1]})`} className='w-100'
-                                                    onClick={() => goto(index)} />
-                                            </div>
-                                        )
-                                    })
-                                }
-                                
+                    {
+                      currentProduct.productImages !== undefined &&
+                      currentProduct.productImages.map((imgUrl, index) => {
+                        return (
+                          <div className='item'>
+                            <img src={`${imgUrl}?im=Resize=(${smallImageSize[0]},${smallImageSize[1]})`} className='w-100'
+                              onClick={() => goto(index)} />
+                          </div>
+                        )
+                      })
+                    }
 
-                            </Slider>
 
-                        </div>
+                  </Slider>
+
+                </div>
                 {/* <div className="col-md-5">
                   <div className="productZoom">
 
@@ -195,30 +230,75 @@ function DetailsPage( props ) {
 
                 </div> */}
                 <div className="col-md-7 productInfo">
-                  <h1>Maggi 2-Minute Masala Noodles 70 g, Brown</h1>
+                  <h1>{currentProduct.productName}</h1>
                   <div className="d-flex align-items-center mb-4">
-                    <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+                    <Rating name="half-rating-read" value={parseFloat(currentProduct.rating)} precision={0.5} readOnly />
                     <span>(32 reviews)</span>
 
                   </div>
                   <div className="priceSection d-flex align-items-center ">
-                    <span className='text priceLarge'>$20</span>
+                    <span className='text priceLarge'>Rs: {currentProduct.price}</span>
                     <div className="ml-2 d-flex flex-column">
-                      <span className='text-org'>26% off</span>
-                      <span className='text-b oldPrice'>$52</span>
+                      <span className='text-org'>{currentProduct.discount}% Off</span>
+                      <span className='text-b oldPrice'>Rs {currentProduct.oldPrice}</span>
 
 
                     </div>
                   </div>
-                  <p>Maggi 2-Minutes Noodles have been a classic Indian snack for a good few decades now.
-                    Nestle brings you another delicious instant food product - Maggi 2-Minute Masala Noodles!
-                    These Maggi noodles offer you the delicious masala flavour that will leave you wanting for more.
-                    It is not just loved by young ones but adults too. For every busy day or lazy evening,
-                    these noodles are easy to make and are perfect for those untimely hunger pangs.
-                    They are made with all-natural ingredients and offers you a lip-smacking taste as
-                    they are loaded with authentic flavours. So go ahead, buy Maggi 2-Minute Masala Noodle online today!</p>
+                  <p>{currentProduct.description}</p>
+                  {
+                    currentProduct.weight !== undefined && currentProduct.weight.length !== 0 &&
+                    <div className='productSize d-flex align-items-center'>
+                      <span>Size / Weight:</span>
+                      <ul className='list list-inline mb-0 pl-4'>
+                        {
+                          currentProduct.weight.map((item, index) => {
+                            return (
+                              <li className='list-inline-item'><a className={`tag ${activeSize === index ? 'active' : ''}`} onClick={() => isActive(index)}>{item}g</a></li>
+                            )
+                          })
+                        }
+                      </ul>
+                    </div>
+                  }
 
-                  <div className="productSize d-flex align-items-center">
+
+
+                  {
+                    currentProduct.RAM !== undefined && currentProduct.RAM.length !== 0 &&
+                    <div className='productSize d-flex align-items-center'>
+                      <span>RAM:</span>
+                      <ul className='list list-inline mb-0 pl-4'>
+                        {
+                          currentProduct.RAM.map((RAM, index) => {
+                            return (
+                              <li className='list-inline-item'><a className={`tag ${activeSize === index ? 'active' : ''}`} onClick={() => isActive(index)}>{RAM} GB</a></li>
+                            )
+                          })
+                        }
+                      </ul>
+                    </div>
+                  }
+
+
+
+                  {
+                    currentProduct.SIZE !== undefined && currentProduct.SIZE.length !== 0 &&
+                    <div className='productSize d-flex align-items-center'>
+                      <span>SIZE:</span>
+                      <ul className='list list-inline mb-0 pl-4'>
+                        {
+                          currentProduct.SIZE.map((SIZE, index) => {
+                            return (
+                              <li className='list-inline-item'><a className={`tag ${activeSize === index ? 'active' : ''}`} onClick={() => isActive(index)}>{SIZE}</a></li>
+                            )
+                          })
+                        }
+                      </ul>
+                    </div>
+                  }
+
+                  {/* <div className="productSize d-flex align-items-center">
                     <span>Size / Weight:</span>
                     <ul className='ul1 list list-inline mb-0 pl-4'>
                       <li className='list-inline-item'>
@@ -240,21 +320,21 @@ function DetailsPage( props ) {
 
 
                     </ul>
+                  </div> */}
+                  <div className="d-flex align-items-center ml-3">
+                    <div><Quantitybox /></div>
+
+                    <div className="addCartSection pt-4 pb-4 d-flex align-items-center">
+
+                      <Button className='btnfilter btn-lg btncart'> <ShoppingCartOutlinedIcon /> Add to Cart</Button>
+                      <Button className=' btncart ml-3 btn-border'> <FavoriteBorderOutlinedIcon /></Button>
+                      <Button className=' btncart ml-3 btn-border'> <CompareArrowsOutlinedIcon /></Button>
+
+
+
+                    </div>
+
                   </div>
-                 <div className="d-flex align-items-center ml-3">
-                  <div><Quantitybox /></div>
-                  
-                  <div className="addCartSection pt-4 pb-4 d-flex align-items-center">
-
-                    <Button className='btnfilter btn-lg btncart'> <ShoppingCartOutlinedIcon /> Add to Cart</Button>
-                    <Button className=' btncart ml-3 btn-border'> <FavoriteBorderOutlinedIcon /></Button>
-                    <Button className=' btncart ml-3 btn-border'> <CompareArrowsOutlinedIcon /></Button>
-
-
-
-                  </div>
-
-                 </div>
 
 
 
@@ -267,9 +347,12 @@ function DetailsPage( props ) {
           <div className="card mt-5 detailsPageTabs">
             <div className="customTabs">
               <ul className='list list-inline'>
-                <li className='list-inline-item'><Button className={`${activeTabs === 0 && 'active'}`} onClick={() => setactiveTabs(0)}>Description</Button></li>
-                <li className='list-inline-item'><Button className={`${activeTabs === 1 && 'active'}`} onClick={() => setactiveTabs(1)}>Additional Info</Button></li>
-                <li className='list-inline-item'> <Button className={`${activeTabs === 2 && 'active'}`} onClick={() => setactiveTabs(2)}>Reviews (3)</Button></li>
+                <li className='list-inline-item'>
+                  <Button className={`${activeTabs === 0 && 'active'}`} onClick={() => setactiveTabs(0)}>Description</Button></li>
+                <li className='list-inline-item'>
+                  <Button className={`${activeTabs === 1 && 'active'}`} onClick={() => setactiveTabs(1)}>Additional Info</Button></li>
+                <li className='list-inline-item'>
+                  <Button className={`${activeTabs === 2 && 'active'}`} onClick={() => setactiveTabs(2)}>Reviews (3)</Button></li>
 
               </ul>
 
@@ -277,23 +360,19 @@ function DetailsPage( props ) {
               {
                 activeTabs === 0 &&
                 <div className="tabcontent">
-                  <p>Maggi 2-Minutes Noodles have been a classic Indian snack for a good few decades now.
-                    Nestle brings you another delicious instant food product - Maggi 2-Minute Masala Noodles!
-                    These Maggi noodles offer you the delicious masala flavour that will leave you wanting for more. </p>
-                  <p>It is not just loved by young ones but adults too. For every busy day or lazy evening, these noodles are easy to make and are perfect for those untimely hunger pangs. They are made with all-natural ingredients and offers
-                    you a lip-smacking taste as they are loaded with authentic flavours.
-                    So go ahead, buy Maggi 2-Minute Masala Noodle online today!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta inventore iste neque eum aspernatur vero. Quibusdam ipsa nam voluptates, autem aperiam optio doloribus iusto fugit ea porro, voluptatem ducimus eius? </p>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, repellendus. Voluptatibus eaque, quas quaerat vel quod repellat ex suscipit odio corporis perferendis rerum harum accusamus, error fugiat accusantium laborum quos?!</p>
                   <br></br>
 
                   <h3>Packaging & Delivery</h3>
-                  <p>Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary. Please read the label, directions and warnings carefully before use.
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sapiente sit, corporis suscipit culpa tempore veniam, magni in nesciunt mollitia tenetur nobis modi, vero voluptatum. Quod dolores magni culpa eligendi.
 
                   </p>
                   <br></br>
 
                   <h3>Features & Details
                   </h3>
-                  <p>Made from the finest quality ingredients</p>
+                  <p>Made from the finest quality</p>
                   <br></br>
 
                 </div>

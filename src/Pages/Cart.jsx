@@ -1,14 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Berry from '../Assets/berry.jpg'
 import Rating from '@mui/material/Rating';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Button } from '@mui/material';
 import Quantitybox from '../Components/Quantitybox';
 import Header from '../Components/Header';
+import { MyContext } from '../App';
+import axios from 'axios';
 const Cart = () => {
-   
+  
+    const [cartItems, setCartItems] = useState([])
+    const context = useContext(MyContext);
+
+    useEffect(() => {
+        getCartData("http://localhost:8000/cartItems")
+
+
+    }, []);
+    const getCartData = async (url) => {
+        // item.quantity = 1;
+
+        try {
+            await axios.get(url).then((res) => {
+                if (res !== undefined) {
+                    setCartItems(res.data)
+                }
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+    const deleteItem = async (id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8000/cartItems/${id}`);
+            if (response !== null) {
+                getCartData("http://localhost:8000/cartItems");
+                // context.removeItemsFromCart(id);
+            }
+        } catch (error) {
+            console.error("Error deleting item:", error);
+        }
+    }
+ 
+
+
+
     return (
         <>
             <div className="breadcrumbWrapper mb-4">
@@ -47,7 +86,35 @@ const Cart = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            {
+                                                cartItems.length !== 0 &&
+                                                cartItems.map((item, index) => {
+                                                    return (
+                                                        <tr>
+                                                            <td>
+                                                                <div className="d-flex">
+                                                                    <div className="imgcart align-items-center">
+                                                                        <img src={item.catImg + '?im=Resize=(100,100)'}  className='w-100' alt="" />
+                                                                    </div>
+                                                                    <div className="info-cart">
+                                                                        <Link to={`/product/${item.id}`}><h4>{item.productName}</h4></Link>
+                                                                        <Rating name="half-rating-read"  value={parseFloat(item.rating)} precision={0.5} readOnly />
+                                                                        <span className='text-right'>(4.5)</span>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td><span>Rs:  {parseInt(item.price.split(",").join(""))}</span></td>
+                                                            <td>
+                                                                <Quantitybox />
+                                                            </td>
+                                                            <td><span className='text-p'>Rs. {parseInt(item.price.split(",").join("")) * parseInt(item.quantity)}</span></td>
+                                                            <td><span className='cursor'    onClick={() => deleteItem(item.id)}><DeleteOutlineOutlinedIcon /></span></td>
+                                                        </tr>
+
+                                                    )
+                                                })
+                                            }
+                                            {/* <tr>
                                                 <td>
                                                     <div className="d-flex">
                                                         <div className="imgcart align-items-center">
@@ -106,43 +173,43 @@ const Cart = () => {
                                                 </td>
                                                 <td><span className='text-p'>$2.51</span></td>
                                                 <td><span className='cursor'><DeleteOutlineOutlinedIcon/></span></td>
-                                            </tr>
+                                            </tr> */}
                                         </tbody>
 
                                     </table>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div className="col-md-5 pl-5 checkout">
-                                <div className="card p-4">
-                                    <div className="d-flex align-items-center mb-4">
-                                        <h5 className='mb-0 text-b'>Subtotal</h5>
-                                        <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
+                            <div className="card p-4">
+                                <div className="d-flex align-items-center mb-4">
+                                    <h5 className='mb-0 text-b'>Subtotal</h5>
+                                    <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
 
-                                    </div>
-                                    <div className="d-flex align-items-center mb-4">
-                                        <h5 className='mb-0 text-b'>Shipping</h5>
-                                        <h3 className='ml-auto mb-0'>Free</h3>
-
-                                    </div>
-                                    <div className="d-flex align-items-center mb-4">
-                                        <h5 className='mb-0 text-b'>Estimate for</h5>
-                                        <h3 className='ml-auto mb-0'>United Kingdom</h3>
-
-                                    </div>
-                                    <div className="d-flex align-items-center mb-4">
-                                        <h5 className='mb-0 text-b'>Total</h5>
-                                        <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
-
-                                    </div>
-                                    <br></br>
-                                    <Button className="btnfilter"r>Checkout</Button>
                                 </div>
-                                
+                                <div className="d-flex align-items-center mb-4">
+                                    <h5 className='mb-0 text-b'>Shipping</h5>
+                                    <h3 className='ml-auto mb-0'>Free</h3>
 
+                                </div>
+                                <div className="d-flex align-items-center mb-4">
+                                    <h5 className='mb-0 text-b'>Estimate for</h5>
+                                    <h3 className='ml-auto mb-0'>United Kingdom</h3>
 
+                                </div>
+                                <div className="d-flex align-items-center mb-4">
+                                    <h5 className='mb-0 text-b'>Total</h5>
+                                    <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
+
+                                </div>
+                                <br></br>
+                                <Button className="btnfilter" r>Checkout</Button>
                             </div>
+
+
+
+                        </div>
                     </div>
                 </div>
 
