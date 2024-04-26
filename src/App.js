@@ -50,7 +50,7 @@ function App() {
         <Route path='/home' element={<HomeSlider/>}/>
         <Route path='/cart' element={<Cart/>}/>
         {/* <Route path='/cat/:id/:id' element={<Listing/>}/> */}
-        <Route path='/product/details' element={<DetailsPage/>}/>
+        <Route exact={true} path="/product/:id" element={<DetailsPage data={productData} />} />
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>

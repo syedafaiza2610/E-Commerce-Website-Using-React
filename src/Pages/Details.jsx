@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState , useEffect } from 'react'
 import Header from '../Components/Header'
 import Rating from '@mui/material/Rating';
-import { Link } from 'react-router-dom'
+import { Link , useParams} from 'react-router-dom'
 import InnerImageZoom from 'react-inner-image-zoom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import Slider from "react-slick";
@@ -15,7 +15,8 @@ import Sidebar from '../Components/Sidebar';
 import Products from '../Components/Products'
 import Quantitybox from '../Components/Quantitybox';
 
-function DetailsPage() {
+function DetailsPage( props ) {
+  const [currentProduct, setCurrentProduct] = useState({})
 
   var related = {
     dots: false,
@@ -58,9 +59,28 @@ function DetailsPage() {
   const [activeSize, setactiveSize] = useState(0);
 
   const [activeTabs, setactiveTabs] = useState(0)
+
+  let { id } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+    props.data.length !== 0 &&
+        props.data.map((item) => {
+            item.items.length !== 0 &&
+                item.items.map((item_) => {
+                    item_.products.length !== 0 &&
+                        item_.products.map((product) => {
+                            if (parseInt(product.id) === parseInt(id)) {
+                                setCurrentProduct(product);
+                            }
+                        })
+                })
+        })
+ },[id] )
+
   return (
     <>
-      <Header />
       <div className="detailsPage mb-5">
         <div className="breadcrumbWrapper mb-4">
           <div className="container-fluid">
@@ -72,6 +92,9 @@ function DetailsPage() {
 
           </div>
         </div>
+        {/* {
+          console.log(currentProduct)
+        } */}
         <div className="container-fluid detailsContainer pt-3 pb-3">
           <div className="row">
             <div className="col-md-11 part1">

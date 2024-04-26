@@ -14,6 +14,7 @@ function Products(props) {
 
   const [productData, setproductData] = useState();
   useEffect(() => {
+    window.scroll(0,0);
     setproductData(props.item)
   }, [props.item]);
   return (
@@ -25,7 +26,7 @@ function Products(props) {
       {
         productData !== undefined &&
         <>
-          <Link>
+          <Link to={`/product/${productData.id}`}>
             <div className="imgWrapper">
               <div className='wrapper'>
                 <img className='w-100' src={productData.catImg + '?im-Resize=(420,420)'} alt="" />
