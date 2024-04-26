@@ -38,6 +38,16 @@ function DetailsPage( props ) {
     }
   }
   const zoomSlider = useRef();
+  const zoomSliderBig = useRef();
+  var settings2 = {
+    dots: false,
+    infinite: false,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: false,
+    arrows: false,
+};
   var settings = {
     dots: false,
     infinite: false,
@@ -47,15 +57,18 @@ function DetailsPage( props ) {
     fade: false,
     arrows: true
   };
-  const goto = (url) => {
-    setzoomImage(url)
-  }
+ 
+  const goto = (index) => {
+
+    zoomSlider.current.slickGoTo(index);
+    zoomSliderBig.current.slickGoTo(index);
+}
   const isActive = (index) => {
     setactiveSize(index)
   }
   const [zoomImage, setzoomImage] = useState('https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg');
-  const [bigimageSize, setbigimageSize] = useState([1500, 1500]);
-  const [smallimageSize, setsmalimageSize] = useState([150, 150]);
+  const [bigImageSize, setBigImageSize] = useState([1500, 1500]);
+  const [smallImageSize, setsmallImageSize] = useState([150, 150]);
   const [activeSize, setactiveSize] = useState(0);
 
   const [activeTabs, setactiveTabs] = useState(0)
@@ -99,46 +112,88 @@ function DetailsPage( props ) {
           <div className="row">
             <div className="col-md-11 part1">
               <div className="row">
-                <div className="col-md-5">
+              <div className='col-md-5'>
+                            <div className='productZoom'>
+                                <Slider {...settings2} className='zoomSliderBig' ref={zoomSliderBig}>
+                                    {
+                                        currentProduct.productImages !== undefined &&
+                                        currentProduct.productImages.map((imgUrl, index) => {
+                                            return (
+                                              // console.log(imgUrl)
+                                                <div className='item'>
+                                                    <InnerImageZoom
+                                                        zoomType="hover" zoomScale={1}
+                                                        key={index}
+                                                        src={`${imgUrl}?im=Resize=(${bigImageSize[0]},${bigImageSize[1]})`} />
+
+                                                </div>
+                                            )
+                                            
+                                        })
+                                    }
+
+                                </Slider>
+                            </div>
+
+
+                            <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
+
+                            {
+                                    currentProduct.productImages !== undefined &&
+                                    currentProduct.productImages.map((imgUrl, index) => {
+                                        return (
+                                            <div className='item'>
+                                                <img src={`${imgUrl}?im=Resize=(${smallImageSize[0]},${smallImageSize[1]})`} className='w-100'
+                                                    onClick={() => goto(index)} />
+                                            </div>
+                                        )
+                                    })
+                                }
+                                
+
+                            </Slider>
+
+                        </div>
+                {/* <div className="col-md-5">
                   <div className="productZoom">
 
                     <InnerImageZoom
                       src={`${zoomImage}?im=Resize=(${bigimageSize[0]},${bigimageSize[1]})`} zoomType='hover' zoomScale={1}
                       onClick={() => goto(0)} />
                   </div>
-                  <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-7-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
-                        onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-7-202305292130.jpg`)} />
-                    </div>
-                    <div className="item">
-                      <img src="https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-8-202305292130.jpg?im=Resize=(150,150)" className='w-100'
-                        onClick={() => goto('https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-8-202305292130.jpg')} />
-                    </div>
+                  // <Slider {...settings} className='zoomSlider' ref={zoomSlider}>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-7-202305292130.jpg?im=Resize=(${smallimageSize[0]},${smallimageSize[1]})`} className='w-100'
+                  //       onClick={() => goto(`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-7-202305292130.jpg`)} />
+                  //   </div>
+                  //   <div className="item">
+                  //     <img src="https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-8-202305292130.jpg?im=Resize=(150,150)" className='w-100'
+                  //       onClick={() => goto('https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-8-202305292130.jpg')} />
+                  //   </div>
 
-                  </Slider>
+                  // </Slider>
 
-                </div>
+                </div> */}
                 <div className="col-md-7 productInfo">
                   <h1>Maggi 2-Minute Masala Noodles 70 g, Brown</h1>
                   <div className="d-flex align-items-center mb-4">
