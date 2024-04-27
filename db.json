@@ -1261,91 +1261,65 @@
       ]
     }
   ],
-  "productReviews": [
-    {
-      "review": "nice ",
-      "userName": "rinku verma",
-      "rating": "5",
-      "productId": "47",
-      "date": "11/19/2023, 12:35:32 AM",
-      "id": "1"
-    },
-    {
-      "review": "good ",
-      "userName": "sfsdf",
-      "rating": "4",
-      "productId": "40",
-      "date": "11/19/2023, 12:36:30 AM",
-      "id": "2"
-    },
-    {
-      "review": "Realme C55 DLC 64GB, 4 GB RAM, Sunshower, Mobile Phone  nice product ",
-      "userName": "rinku verma",
-      "rating": "5",
-      "productId": "38",
-      "date": "11/19/2023, 12:37:35 AM",
-      "id": "3"
-    },
-    {
-      "review": "HARYANA FRESH Rich Desi Danedar Ghee 500 Grams (Carton)  nice product ",
-      "userName": "@rinkuv37",
-      "rating": "5",
-      "productId": "13",
-      "date": "11/19/2023, 6:54:23 PM",
-      "id": "4"
-    },
-    {
-      "review": "nice product ",
-      "userName": "rinku verma",
-      "rating": "5",
-      "productId": "36",
-      "date": "11/19/2023, 8:43:56 PM",
-      "id": "5"
-    },
-    {
-      "review": "zsfzsdf",
-      "userName": "dfsdff",
-      "rating": "5",
-      "productId": "8",
-      "date": "11/22/2023, 6:57:23 PM",
-      "id": "6"
-    },
-    {
-      "review": "",
-      "userName": "",
-      "rating": 0,
-      "productId": 0,
-      "date": "",
-      "id": "7"
-    },
-    {
-      "review": "nice product",
-      "userName": "rinku verma",
-      "rating": 0,
-      "productId": "1",
-      "date": "12/17/2023, 5:58:25 AM",
-      "id": "8"
-    },
-    {
-      "review": "nice product",
-      "userName": "rinku verma",
-      "rating": "5",
-      "productId": "1",
-      "date": "12/17/2023, 5:58:43 AM",
-      "id": "9"
-    },
-    {
-      "review": "nice product ",
-      "userName": "rinku verma",
-      "rating": "5",
-      "productId": "36",
-      "date": "12/17/2023, 10:18:11 PM",
-      "id": "10"
-    }
-  ],
   "cartItems": [
     {
-      "id": 35,
+      "id": "37",
+      "productName": "Tecno Pop 7 Pro 64 GB, 2 GB, Black, Smartphone",
+      "price": "5,555.00",
+      "oldPrice": "7,999.00 ",
+      "weight": [],
+      "RAM": [
+        4,
+        6,
+        8,
+        12
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-0-202309292014.jpeg",
+      "discount": "16",
+      "brand": "Tecno",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-0-202309292014.jpeg",
+        "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-1-202309292014.jpeg",
+        "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-2-202309292014.jpeg",
+        "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-3-202309292014.jpeg",
+        "https://www.jiomart.com/images/product/original/494267984/tecno-pop-7-pro-64-gb-2-gb-black-smartphone-digital-o494267984-p605156024-4-202309292014.jpeg"
+      ],
+      "rating": 4.2,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Electronics",
+      "subCatName": "Mobiles",
+      "quantity": 1
+    },
+    {
+      "id": "38",
+      "productName": "Realme C55 DLC 64GB, 4 GB RAM, Sunshower, Mobile Phone",
+      "price": "10,299.00",
+      "oldPrice": "12,999.00 ",
+      "weight": [],
+      "RAM": [
+        4,
+        6,
+        8,
+        12
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-0-202310051633.jpeg",
+      "discount": "16",
+      "brand": "Realme",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-0-202310051633.jpeg",
+        "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-1-202310051633.jpeg",
+        "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-2-202310051633.jpeg",
+        "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-3-202310051633.jpeg",
+        "https://www.jiomart.com/images/product/original/494267979/realme-c55-dlc-64gb-4-gb-ram-sunshower-mobile-phone-digital-o494267979-p605449884-4-202310051633.jpeg"
+      ],
+      "rating": 4.5,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Electronics",
+      "subCatName": "Mobiles",
+      "quantity": 1
+    },
+    {
+      "id": "35",
       "productName": "OnePlus Nord CE 2 Lite 5G,128 GB,6 GB RAM,Blue Tide,Mobile Phone",
       "price": "16,999.00",
       "oldPrice": "19,999.00",
@@ -1372,167 +1346,6 @@
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
       "parentCatName": "Electronics",
       "subCatName": "Mobiles",
-      "quantity": 1
-    },
-    {
-      "id": 47,
-      "productName": "BULLMER Men Beige Cotton Blend Printed Single Sweatshirts",
-      "price": "699.00",
-      "oldPrice": "989.00",
-      "weight": [],
-      "RAM": [],
-      "SIZE": [
-        "M",
-        "L",
-        "XL"
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
-      "discount": "60",
-      "brand": "BULLMER",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-1-202210291839.jpg",
-        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-2-202210291839.jpg"
-      ],
-      "rating": 4.5,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-      "parentCatName": "Fashion",
-      "subCatName": "Men's Wear",
-      "quantity": 1
-    },
-    {
-      "id": 45,
-      "productName": "Mid-Rise Skinny Fit Jeans",
-      "price": "269.00",
-      "oldPrice": "899.00",
-      "weight": [],
-      "RAM": [],
-      "SIZE": [
-        28,
-        30,
-        32,
-        34
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model-420434311_blue-0-202308081627.jpg",
-      "discount": "49",
-      "brand": "Fort Collins",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model-420434311_blue-0-202308081627.jpg",
-        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model2-420434311_blue-2-202308081627.jpg",
-        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model3-420434311_blue-3-202308081627.jpg",
-        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model4-420434311_blue-4-202308081627.jpg",
-        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model5-420434311_blue-5-202308081627.jpg"
-      ],
-      "rating": 5,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-      "parentCatName": "Fashion",
-      "subCatName": "Men's Wear",
-      "quantity": 1
-    },
-    {
-      "id": 44,
-      "productName": "Bomber Jacket with Zipper Pockets",
-      "price": "1,593.00",
-      "oldPrice": "3,125.00  ",
-      "weight": [],
-      "RAM": [],
-      "SIZE": [
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model-469255919_black-0-202301311905.jpg",
-      "discount": "49",
-      "brand": "Fort Collins",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model-469255919_black-0-202301311905.jpg",
-        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model2-469255919_black-2-202301311905.jpg",
-        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model3-469255919_black-3-202301311905.jpg",
-        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model4-469255919_black-4-202301311905.jpg"
-      ],
-      "rating": 4.5,
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-      "parentCatName": "Fashion",
-      "subCatName": "Men's Wear",
-      "quantity": 1
-    },
-    {
-      "id": 3,
-      "productName": "Good Life Raw Peanuts 500 g",
-      "price": "89",
-      "oldPrice": "150",
-      "weight": [
-        50,
-        100,
-        150,
-        200,
-        250,
-        500
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-0-202306102242.jpg",
-      "discount": "16",
-      "brand": "Good Life",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-0-202306102242.jpg",
-        "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-2-202306102242.jpg",
-        "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-3-202306102243.jpg",
-        "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-4-202306102243.jpg",
-        "https://www.jiomart.com/images/product/original/491278616/good-life-raw-peanuts-500-g-product-images-o491278616-p491278616-5-202306102243.jpg"
-      ],
-      "rating": 3.5,
-      "description": "Good Life Raw Peanuts is a healthy snack and the right choice for you. You can easily roast them at home. They are loaded with the goodness of health and taste. Peanut butter made with Peanuts clearly works well in sweet dishes, like cookies and brownies, which is why it pairs well with other sweeter foods like sweet potato. Buy Good Life Raw Peanuts online now!",
-      "quantity": 1
-    },
-    {
-      "id": 4,
-      "productName": "Tata Sampann Unpolished Chilka Moong 500 g",
-      "price": "74",
-      "oldPrice": "95",
-      "weight": [
-        50,
-        100,
-        150,
-        200,
-        250,
-        500
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/490830947/tata-sampann-high-protein-unpolished-chilka-moong-500-g-product-images-o490830947-p490830947-0-202203150526.jpg",
-      "discount": "18",
-      "brand": "Tata Sampann",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/490830947/tata-sampann-high-protein-unpolished-chilka-moong-500-g-product-images-o490830947-p490830947-0-202203150526.jpg",
-        "https://www.jiomart.com/images/product/original/490830947/tata-sampann-high-protein-unpolished-chilka-moong-500-g-product-images-o490830947-p490830947-1-202203150526.jpg",
-        "https://www.jiomart.com/images/product/original/490830947/tata-sampann-high-protein-unpolished-chilka-moong-500-g-legal-images-o490830947-p490830947-2-202203150526.jpg",
-        "https://www.jiomart.com/images/product/original/490830947/tata-sampann-high-protein-unpolished-chilka-moong-500-g-legal-images-o490830947-p490830947-5-202203150526.jpg"
-      ],
-      "rating": 4,
-      "description": "Moong Dal is procured from reliable and high-quality sources. The beans are best consumed after being sprouted. Dosa with the whole moong also turns out to be yummy, another exotic way to eat moong is to eat it as a korma which is spiced up with tangy tomatoes and a cashew paste. It is mainly used as the base for curries such as sambar, dal, etc. Buy Tata Sampann Unpolished Chilka Moong online now!",
-      "quantity": 1
-    },
-    {
-      "id": 2,
-      "productName": "Moong Dal 2 kg",
-      "price": "246",
-      "oldPrice": "320",
-      "weight": [
-        50,
-        100,
-        150,
-        200,
-        250,
-        500
-      ],
-      "catImg": "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-0-202205191636.jpg",
-      "discount": "16",
-      "brand": "Private Label",
-      "productImages": [
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-0-202205191636.jpg",
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-product-images-o491432711-p491432711-1-202205191636.jpg",
-        "https://www.jiomart.com/images/product/original/491432711/moong-dal-2-kg-legal-images-o491432711-p491432711-3-202205191636.jpg"
-      ],
-      "rating": 4,
-      "description": "Moong Dal is essentially packed with loads of nutrients that are extremely beneficial for your health. Moong contains almost every important element that your body might need. Buy Moong Dal online today.",
       "quantity": 1
     }
   ]

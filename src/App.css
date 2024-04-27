@@ -1620,6 +1620,10 @@ font-size: 20px!important;
 .checkout .card h5{
   margin-bottom: 0px;
 }
+.checkout .card{
+  position: sticky;
+  top: 180px;
+}
 
 
 

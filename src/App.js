@@ -21,16 +21,18 @@ import axios from 'axios';
 
 
 const MyContext = createContext();
+
 function App() {
 
   const [productData, setproductData] = useState([])
+  const [cartItems, setCartItems] = useState([])
   useEffect(() => {
-    getData('http://localhost:8000/productData')
+    getData('http://localhost:4000/productData');
+    getCartData("http://localhost:4000/cartItems");
 
   }, [])
-  const [cartItems, setCartItems] = useState([])
  
-
+ 
   const getData = async (url) => {
     try {
       await axios.get(url).then((response) => {
@@ -44,23 +46,55 @@ function App() {
     }
 
   }
-  const addToCart = async (item) => {
-    item.quantity = 1;
-
+  const getCartData = async (url) => {
     try {
-      await axios.post("http://localhost:8000/cartItems", item).then((res) => {
-        if (res !== undefined) {
-          setCartItems([...cartItems, { ...item, quantity: 1 }])
-        }
-      })
-    } catch (error) {
-      console.log(error)
-    }
+        await axios.get(url).then((response) => {
+            setCartItems(response.data);
+        })
 
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+//   const getCartData = async (url) => {
+//     try {
+//         await axios.get(url).then((response) => {
+//             setCartItems(response.data);
+//         })
+
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// }
+
+const addToCart = async (item) => {
+  item.quantity = 1;
+
+  try {
+    await axios.post("http://localhost:4000/cartItems", item).then((res) => {
+      if (res !== undefined) {
+        setCartItems([...cartItems, { ...item, quantity: 1 }])
+      }
+    })
+  } catch (error) {
+    console.log(error)
   }
+
+}
+  const removeItemsFromCart = (id) => {
+    const arr = cartItems.filter((obj) => obj.id !== id);
+    setCartItems(arr)
+  }
+  const emptyCart = () => {
+    setCartItems([])
+  }
+
   const value = {
     cartItems,
-    addToCart}
+    addToCart,
+    removeItemsFromCart,
+    emptyCart
+  }
   return (
   
      productData.length !== 0 &&

@@ -46,7 +46,7 @@ function Category(props) {
             {
               alldata && Array.isArray(alldata) && alldata.length !== 0 &&
               alldata.map((item, index) => {
-                console.log(item.cat_name)
+                // console.log(item.cat_name)
                 return (
                   <div className="item" key={index}>
                     <Link to={`/cat/${item.cat_name.toLowerCase()}`}>

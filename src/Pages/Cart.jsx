@@ -3,48 +3,62 @@ import { Link } from 'react-router-dom';
 import Berry from '../Assets/berry.jpg'
 import Rating from '@mui/material/Rating';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { useContext } from 'react';
 import { Button } from '@mui/material';
 import Quantitybox from '../Components/Quantitybox';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Header from '../Components/Header';
 import { MyContext } from '../App';
+import { useContext } from 'react';
 import axios from 'axios';
+
 const Cart = () => {
-  
+
     const [cartItems, setCartItems] = useState([])
     const context = useContext(MyContext);
 
     useEffect(() => {
-        getCartData("http://localhost:8000/cartItems")
-
-
+        getCartData("http://localhost:4000/cartItems");
     }, []);
+
     const getCartData = async (url) => {
-        // item.quantity = 1;
-
         try {
-            await axios.get(url).then((res) => {
-                if (res !== undefined) {
-                    setCartItems(res.data)
-                }
+            await axios.get(url).then((response) => {
+                setCartItems(response.data);
             })
-        } catch (error) {
-            console.log(error)
-        }
 
+        } catch (error) {
+            console.log(error.message);
+        }
     }
     const deleteItem = async (id) => {
-        try {
-            const response = await axios.delete(`http://localhost:8000/cartItems/${id}`);
-            if (response !== null) {
-                getCartData("http://localhost:8000/cartItems");
-                // context.removeItemsFromCart(id);
-            }
-        } catch (error) {
-            console.error("Error deleting item:", error);
+        let response = await axios.delete(`http://localhost:4000/cartItems/${id}`);
+        if (response !== null) {
+            getCartData("http://localhost:4000/cartItems");
+            context.removeItemsFromCart();
+
         }
+
     }
- 
+
+    const emptyCart = () => {
+        let response = null;
+        cartItems.length !== 0 &&
+            cartItems.map((item) => {
+                response = axios.delete(`http://localhost:4000/cartItems/${parseInt(item.id)}`);
+            })
+        if (response !== null) {
+            getCartData("http://localhost:4000/cartItems");
+        }
+
+        context.emptyCart();
+    }
+
+
+    const updateCart = (items) => {
+        // console.log(items)
+        setCartItems(items)
+    }
+
 
 
 
@@ -69,7 +83,7 @@ const Cart = () => {
                                     <h1 className='hd mb-0'>Your Cart</h1>
                                     <p>There are <span className='text-p'> 3 </span> products in your cart</p>
                                 </div>
-                                <span className="spancart d-flex align-items-center cursor"><DeleteOutlineOutlinedIcon />Clear Cart</span>
+                                <span className="spancart d-flex align-items-center cursor" onClick={() => emptyCart()}> <DeleteOutlineOutlinedIcon />Clear Cart</span>
 
 
                             </div>
@@ -94,98 +108,55 @@ const Cart = () => {
                                                             <td>
                                                                 <div className="d-flex">
                                                                     <div className="imgcart align-items-center">
-                                                                        <img src={item.catImg + '?im=Resize=(100,100)'}  className='w-100' alt="" />
+                                                                        <img src={item.catImg + '?im=Resize=(100,100)'} className='w-100' alt="" />
                                                                     </div>
                                                                     <div className="info-cart">
                                                                         <Link to={`/product/${item.id}`}><h4>{item.productName}</h4></Link>
-                                                                        <Rating name="half-rating-read"  value={parseFloat(item.rating)} precision={0.5} readOnly />
-                                                                        <span className='text-right'>(4.5)</span>
+                                                                        <Rating name="half-rating-read" value={parseFloat(item.rating)} precision={0.5} readOnly />
+                                                                        <span className='text-right'>{parseFloat(item.rating)}</span>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td><span>Rs:  {parseInt(item.price.split(",").join(""))}</span></td>
                                                             <td>
-                                                                <Quantitybox />
+                                                                <Quantitybox item={item} cartItems={context.cartItems} index={index} updateCart={updateCart} />
                                                             </td>
-                                                            <td><span className='text-p'>Rs. {parseInt(item.price.split(",").join("")) * parseInt(item.quantity)}</span></td>
-                                                            <td><span className='cursor'    onClick={() => deleteItem(item.id)}><DeleteOutlineOutlinedIcon /></span></td>
+                                                            <td>
+                                                                <span className='text-p'>Rs. {parseInt(item.price.split(",").join("")) * parseInt(item.quantity)}</span>
+                                                            </td>
+                                                            <td><span className='cursor' onClick={() => deleteItem(item.id)}><DeleteOutlineOutlinedIcon /></span></td>
                                                         </tr>
 
                                                     )
                                                 })
                                             }
-                                            {/* <tr>
-                                                <td>
-                                                    <div className="d-flex">
-                                                        <div className="imgcart align-items-center">
-                                                            <img src={Berry} className='w-100' alt="" />
-                                                        </div>
-                                                        <div className="info-cart">
-                                                            <Link><h4> Nestle Original Coffee-Mate Coffee Creamer</h4></Link>
-                                                            <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
-                                                            <span className='text-right'>(4.5)</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><span>$2.51</span></td>
-                                                <td>
-                                                <Quantitybox/>
-                                                </td>
-                                                <td><span className='text-p'>$2.51</span></td>
-                                                <td><span className='cursor'><DeleteOutlineOutlinedIcon/></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div className="d-flex">
-                                                        <div className="imgcart align-items-center">
-                                                            <img src={Berry} className='w-100' alt="" />
-                                                        </div>
-                                                        <div className="info-cart">
-                                                            <Link><h4> Nestle Original Coffee-Mate Coffee Creamer</h4></Link>
-                                                            <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
-                                                            <span className='text-right'>(4.5)</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><span>$2.51</span></td>
-                                                <td>
-                                                   <Quantitybox/>
-                                                </td>
-                                                <td><span className='text-p'>$2.51</span></td>
-                                                <td><span className='cursor'><DeleteOutlineOutlinedIcon/></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div className="d-flex">
-                                                        <div className="imgcart align-items-center">
-                                                            <img src={Berry} className='w-100' alt="" />
-                                                        </div>
-                                                        <div className="info-cart">
-                                                            <Link><h4> Nestle Original Coffee-Mate Coffee Creamer</h4></Link>
-                                                            <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
-                                                            <span className='text-right'>(4.5)</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><span>$2.51</span></td>
-                                                <td>
-                                                <Quantitybox/>
-                                                </td>
-                                                <td><span className='text-p'>$2.51</span></td>
-                                                <td><span className='cursor'><DeleteOutlineOutlinedIcon/></span></td>
-                                            </tr> */}
+
+
                                         </tbody>
 
                                     </table>
                                 </div>
                             </div>
+                            <br></br>
+                            <div className='d-flex align-items-center'>
+                                <Link to="/">
+                                    <Button className='btnfilter'>
+                                        <KeyboardBackspaceIcon /> Continue Shopping</Button>
+
+                                </Link>
+                            </div>
+
 
                         </div>
                         <div className="col-md-5 pl-5 checkout">
                             <div className="card p-4">
                                 <div className="d-flex align-items-center mb-4">
                                     <h5 className='mb-0 text-b'>Subtotal</h5>
-                                    <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
+                                    <h3 className='ml-auto mb-0'><span className='text-p'>  {
+                                        cartItems.length !== 0 &&
+                                        cartItems?.map(item =>
+                                            parseInt(item.price.split(",").join("")) * item.quantity).reduce((total, value) => total + value, 0)
+                                    }</span></h3>
 
                                 </div>
                                 <div className="d-flex align-items-center mb-4">
@@ -200,11 +171,15 @@ const Cart = () => {
                                 </div>
                                 <div className="d-flex align-items-center mb-4">
                                     <h5 className='mb-0 text-b'>Total</h5>
-                                    <h3 className='ml-auto mb-0'><span className='text-p'>$12.31</span></h3>
+                                    <h3 className='ml-auto mb-0'><span className='text-p'> {
+                                        cartItems.length !== 0 &&
+                                        cartItems?.map(item =>
+                                            parseInt(item.price.split(",").join("")) * item.quantity).reduce((total, value) => total + value, 0)
+                                    }</span></h3>
 
                                 </div>
                                 <br></br>
-                                <Button className="btnfilter" r>Checkout</Button>
+                                <Button className="btnfilter">Checkout</Button>
                             </div>
 
 

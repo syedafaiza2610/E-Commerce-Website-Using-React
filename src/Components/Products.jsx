@@ -13,20 +13,18 @@ import { useContext } from 'react';
 
 
 function Products(props) {
-  const context  = useContext(MyContext);
-  const addToCart=(item) =>{
-    context.addToCart(item);
-    
-  }
- 
- 
-  // console.log(props.tag)
-
   const [productData, setproductData] = useState();
+  const context  = useContext(MyContext);
+  
   useEffect(() => {
     window.scroll(0,0);
     setproductData(props.item)
   }, [props.item]);
+
+  const addToCart=(item) =>{
+    context.addToCart(item);
+    
+  }
 
  
   return (
