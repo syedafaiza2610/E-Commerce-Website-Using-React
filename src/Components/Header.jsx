@@ -7,7 +7,7 @@ import { FaCodeCompare } from "react-icons/fa6";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Navbar from './Navbar';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import axios from 'axios';
 import { MdOutlineLocationOn } from "react-icons/md";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -15,6 +15,8 @@ import Button from '@mui/material/Button';
 import MyLocationOutlinedIcon from '@mui/icons-material/MyLocationOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
+import { MyContext } from '../App';
+import { useContext } from 'react';
 
 
 
@@ -31,6 +33,7 @@ function Header(props) {
         'Fresh Fruits',
         'Bread & juice'
     ])
+    const context  = useContext(MyContext);
     const countryList = [];
     useEffect(() => {
         getCountry('https://freetestapi.com/api/v1/countries')
@@ -53,6 +56,7 @@ function Header(props) {
         }
     }
     const [isopendropdown, setisopendropdown] = useState(false)
+  
 
 
     return (
@@ -101,9 +105,12 @@ function Header(props) {
                                                 </li>
                                                 <li className='list-inline-item'>
                                                     <span><ShoppingCartOutlinedIcon size={20} />
-                                                        <span className='badge rounded-circle'>2</span>
+                                                    <Link to={'/cart'}>
+                                                        <span className='badge rounded-circle'>{context.cartItems.length}</span>
                                                         Cart
+                                                        </Link>
                                                     </span>
+                                                    
 
                                                 </li>
                                                 <li className='list-inline-item' >

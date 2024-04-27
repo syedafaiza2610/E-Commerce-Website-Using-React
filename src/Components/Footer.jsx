@@ -20,11 +20,34 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PinterestIcon from '@mui/icons-material/Pinterest';
+import Newsletter from '../Components/Newsletter';
+import NewsletterPic from '../Assets/news3.png'
 
 
 const Footer = () => {
   return (
+    <>
+      <section className='newsLetterSection'>
+        <div className="container-fluid">
+          <div className="box-news d-flex align-align-items-center">
+            <div className="infonews">
+              <h2>Stay home & get your daily needs from our shop</h2>
+              <p>Start Your daily shopping with <Link>Shopsavvy</Link></p>
+              <Newsletter />
+
+
+            </div>
+            <div className="Imgnews">
+              <img src={NewsletterPic} alt="" />
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
     <div className="footerWrapper">
+
       <div className="footerBoxes">
         <div className="container-fluid">
 
@@ -235,6 +258,7 @@ const Footer = () => {
         </div>
       </footer >
     </div >
+    </>
   )
 }
 

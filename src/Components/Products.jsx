@@ -8,14 +8,25 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import Tooltip from '@mui/material/Tooltip';
+import { MyContext } from '../App';
+import { useContext } from 'react';
+
 
 function Products(props) {
-  // console.log(props.tag)
-
   const [productData, setproductData] = useState();
+  const context  = useContext(MyContext);
+  
   useEffect(() => {
+    window.scroll(0,0);
     setproductData(props.item)
   }, [props.item]);
+
+  const addToCart=(item) =>{
+    context.addToCart(item);
+    
+  }
+
+ 
   return (
     <div className='productThumb'>
       {
@@ -25,9 +36,9 @@ function Products(props) {
       {
         productData !== undefined &&
         <>
-          <Link>
+          <Link to={`/product/${productData.id}`}>
             <div className="imgWrapper">
-              <div className='p-4 wrapper'>
+              <div className='wrapper'>
                 <img className='w-100' src={productData.catImg + '?im-Resize=(420,420)'} alt="" />
               </div>
               <div className="overlay1 transition">
@@ -68,14 +79,15 @@ function Products(props) {
             <h4 className='title'><Link>{productData.productName.substr(0,70)+'...'}</Link> </h4>
             <Rating name="half-rating-read" defaultValue={parseFloat(productData.rating)} precision={0.5} readOnly />
             <span className='brand d-block'>By <Link className='clr'>{productData.brand}</Link></span>
-            <div className="d-flex align-items-center ">
-              <div className="d-flex align-items-center">
-                <span className='price'>Rs: {productData.price}</span> <span className='oldprice'>{productData.oldPrice}</span>
+            <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center w-100">
+                <span className='price'>Rs: {productData.price}</span> <span className='oldprice ml-auto'>{productData.oldPrice}</span>
 
               </div>
-              <Button className='addbtn transition'><ShoppingCartOutlinedIcon /> Add</Button>
-
             </div>
+            
+            <Button className='addbtn transition w-100 mt-3'onClick={() => addToCart(productData)}><ShoppingCartOutlinedIcon /> Add</Button>
+
           </div>
         </>
       }
