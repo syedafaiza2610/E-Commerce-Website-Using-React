@@ -85,6 +85,8 @@ const addToCart = async (item) => {
     const arr = cartItems.filter((obj) => obj.id !== id);
     setCartItems(arr)
   }
+
+  
   const emptyCart = () => {
     setCartItems([])
   }
