@@ -1262,6 +1262,116 @@
     }
   ],
   "cartItems": [
-  
+    {
+      "id": 44,
+      "productName": "Bomber Jacket with Zipper Pockets",
+      "price": "1,593.00",
+      "oldPrice": "3,125.00  ",
+      "weight": [],
+      "RAM": [],
+      "SIZE": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model-469255919_black-0-202301311905.jpg",
+      "discount": "49",
+      "brand": "Fort Collins",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model-469255919_black-0-202301311905.jpg",
+        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model2-469255919_black-2-202301311905.jpg",
+        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model3-469255919_black-3-202301311905.jpg",
+        "https://www.jiomart.com/images/product/original/469255919_black/bomber-jacket-with-zipper-pockets-model4-469255919_black-4-202301311905.jpg"
+      ],
+      "rating": 4.5,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Fashion",
+      "subCatName": "Men's Wear",
+      "quantity": 1
+    },
+    {
+      "id": 45,
+      "productName": "Mid-Rise Skinny Fit Jeans",
+      "price": "269.00",
+      "oldPrice": "899.00",
+      "weight": [],
+      "RAM": [],
+      "SIZE": [
+        28,
+        30,
+        32,
+        34
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model-420434311_blue-0-202308081627.jpg",
+      "discount": "49",
+      "brand": "Fort Collins",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model-420434311_blue-0-202308081627.jpg",
+        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model2-420434311_blue-2-202308081627.jpg",
+        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model3-420434311_blue-3-202308081627.jpg",
+        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model4-420434311_blue-4-202308081627.jpg",
+        "https://www.jiomart.com/images/product/original/420434311_blue/skinny-jeans-with-button-closure-model5-420434311_blue-5-202308081627.jpg"
+      ],
+      "rating": 5,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Fashion",
+      "subCatName": "Men's Wear",
+      "quantity": 1
+    },
+    {
+      "id": 46,
+      "productName": "Plutus Men Black Solid Polyester Casual Jacket M",
+      "price": "499.00",
+      "oldPrice": "699.00",
+      "weight": [],
+      "RAM": [],
+      "SIZE": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-0-202209240106.jpg",
+      "discount": "60",
+      "brand": "PLUTUS",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-0-202209240106.jpg",
+        "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-1-202209240106.jpg",
+        "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-2-202209240106.jpg",
+        "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-3-202209240106.jpg",
+        "https://www.jiomart.com/images/product/original/rvurcwrojo/plutus-men-black-solid-polyester-casual-jacket-m-product-images-rvurcwrojo-4-202209240106.jpg"
+      ],
+      "rating": 5,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Fashion",
+      "subCatName": "Men's Wear",
+      "quantity": 1
+    },
+    {
+      "id": 47,
+      "productName": "BULLMER Men Beige Cotton Blend Printed Single Sweatshirts",
+      "price": "699.00",
+      "oldPrice": "989.00",
+      "weight": [],
+      "RAM": [],
+      "SIZE": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "catImg": "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
+      "discount": "60",
+      "brand": "BULLMER",
+      "productImages": [
+        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-0-202210291839.jpg",
+        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-1-202210291839.jpg",
+        "https://www.jiomart.com/images/product/original/rvqq9gohkt/bullmer-men-beige-cotton-blend-printed-single-sweatshirts-product-images-rvqq9gohkt-2-202210291839.jpg"
+      ],
+      "rating": 4.5,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+      "parentCatName": "Fashion",
+      "subCatName": "Men's Wear",
+      "quantity": 1
+    }
   ]
 }
