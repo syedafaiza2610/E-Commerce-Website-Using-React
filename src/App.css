@@ -259,6 +259,9 @@ border-radius: 7px;
   position: relative;
   margin-left: 4px;
 }
+.headerTabs li a{
+color: #000!important;
+}
 .headerTabs li span{
   font-size: 20px;
   cursor: pointer;
@@ -267,6 +270,9 @@ border-radius: 7px;
 .headerTabs li span svg{
   margin-right:8px;
 }
+/* .headerTabs li span svg:hover{
+  color: #000!important;
+} */
 
 span .badge{
   width: 24px;
